@@ -5,54 +5,145 @@
 <div class="card" style="padding: 25px; max-width: 850px; margin: 20px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6;">
 
     <header style="margin-bottom: 30px;">
-        <h1 style="color: #2c3e50; font-size: 24pt; margin-bottom: 5px;">Predicción de Fallas en Alumbrado Público</h1>
-        <p style="font-size: 11pt; color: #7f8c8d; margin: 0;">Fase II: Pipeline Técnico de Ingeniería de Datos</p>
-        <p style="font-size: 10pt; color: #27ae60; font-weight: bold; margin-top: 5px;">Procesamiento e Integración de Archivos Mensuales (Luminarias 2023)</p>
+        <h1 style="color: #2c3e50; font-size: 24pt; margin-bottom: 5px;">
+            Predicción de Fallas en Alumbrado Público de Bogotá
+        </h1>
+
+        <p style="font-size: 11pt; color: #7f8c8d; margin: 0;">
+            Fase II: Pipeline Técnico de Ingeniería de Datos
+        </p>
+
+        <p style="font-size: 10pt; color: #27ae60; font-weight: bold; margin-top: 5px;">
+            Procesamiento e Integración de Archivos Mensuales de Alumbrado Público de Bogotá (2023)
+        </p>
     </header>
 
     <section style="background-color: #fafafa; padding: 20px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 30px;">
-        <h2 style="color: #27ae60; margin-top: 0; font-size: 16pt;">El Pilar de la Robustez Predictiva</h2>
-        <p style="margin-bottom: 0;">La ingeniería de datos constituye un pilar fundamental en el proceso de Machine Learning. Esta fase se centra en preparar adecuadamente los datos para el modelado, maximizando su potencial predictivo y minimizando riesgos de sesgo o sobreajuste. Según el estándar de <strong>ML-Ops.org</strong>, todas las transformaciones y decisiones deben documentarse meticulosamente para garantizar la reproducibilidad del proceso, facilitando así futuras revisiones o actualizaciones del modelo.</p>
+        
+        <h2 style="color: #27ae60; margin-top: 0; font-size: 16pt;">
+            El Pilar de la Robustez Predictiva
+        </h2>
+
+        <p style="margin-bottom: 0;">
+            La ingeniería de datos constituye un pilar fundamental en el proceso de Machine Learning aplicado al sistema de alumbrado público de Bogotá. Esta fase se centra en preparar adecuadamente los datos para el modelado, maximizando su potencial predictivo y minimizando riesgos de sesgo o sobreajuste.
+        </p>
+
+        <p>
+            Según el estándar de <strong>ML-Ops.org</strong>, todas las transformaciones y decisiones deben documentarse meticulosamente para garantizar la reproducibilidad del proceso, facilitando futuras revisiones o actualizaciones del modelo predictivo urbano.
+        </p>
     </section>
 
     <section>
-        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">Procesos del Ciclo de Datos (Dataset 2023)</h2>
+
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">
+            Procesos del Ciclo de Datos (Dataset Bogotá 2023)
+        </h2>
         
         <div style="margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #27ae60;">
-            <h3 style="color: #2c3e50; margin-bottom: 5px;">1. Selección y Concatenación de Fuentes</h3>
-            <p style="margin-top: 5px; color: #4a5568;">El reto técnico inicial consiste en construir un pipeline ETL capaz de ingerir y unificar de forma secuencial la estructura temporal de los archivos individuales suministrados:</p>
+
+            <h3 style="color: #2c3e50; margin-bottom: 5px;">
+                1. Selección y Concatenación de Fuentes
+            </h3>
+
+            <p style="margin-top: 5px; color: #4a5568;">
+                El reto técnico inicial consiste en construir un pipeline ETL capaz de ingerir y unificar de forma secuencial la estructura temporal de los archivos individuales del sistema de alumbrado público de Bogotá.
+            </p>
+
             <ul style="color: #4a5568;">
-                <li><strong>Extracción en Lote:</strong> Lectura programática indexada de los archivos CSV correspondientes al ciclo anual de alumbrado (`consolidado-mensual-lum-ap-2023.xlsx - ENE.csv` hasta `NOV.csv`).</li>
-                <li><strong>Inclusión de Metadato Temporal:</strong> Inyección forzada de una columna derivada corporativa (`Mes_Operación`) durante la lectura de cada archivo para no perder la traza temporal tras la unión del dataset definitivo.</li>
-                <li><strong>Cruce Externo:</strong> Vinculación del dataset unificado con las bases de datos geográficas de cuadrantes urbanos y el sistema centralizado de reportes ciudadanos.</li>
+                <li>
+                    <strong>Extracción en Lote:</strong>
+                    Lectura programática indexada de los archivos CSV correspondientes al ciclo anual de alumbrado (`consolidado-mensual-lum-ap-2023.xlsx - ENE.csv` hasta `NOV.csv`).
+                </li>
+
+                <li>
+                    <strong>Inclusión de Metadato Temporal:</strong>
+                    Inyección de una columna derivada (`Mes_Operación`) durante la lectura de cada archivo para preservar la trazabilidad temporal.
+                </li>
+
+                <li>
+                    <strong>Cruce Externo:</strong>
+                    Integración con bases de datos geográficas de localidades y cuadrantes urbanos de Bogotá, además del sistema centralizado de reportes ciudadanos.
+                </li>
             </ul>
         </div>
 
         <div style="margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #27ae60;">
-            <h3 style="color: #2c3e50; margin-bottom: 5px;">2. Limpieza de Datos y Homogeneización</h3>
-            <p style="margin-top: 5px; color: #4a5568;">Estandarización de las anomalías comunes encontradas en la manipulación de consolidados manuales repetitivos:</p>
+
+            <h3 style="color: #2c3e50; margin-bottom: 5px;">
+                2. Limpieza de Datos y Homogeneización
+            </h3>
+
+            <p style="margin-top: 5px; color: #4a5568;">
+                Estandarización de las anomalías comunes encontradas en la manipulación de consolidados manuales repetitivos.
+            </p>
+
             <ul style="color: #4a5568;">
-                <li><strong>Alineación de Esquemas (Schema Alignment):</strong> Verificación estricta de que las cabeceras mantengan el mismo orden y codificación de caracteres en todas las hojas mensuales para evitar desalineaciones en la carga distribuida.</li>
-                <li><strong>Gestión de Valores Nulos:</strong> Tratamiento de campos vacíos en variables críticas (como el consumo mensual registrado en vatios o coordenadas). Se aplica imputación estadística basada en el comportamiento del mismo id de luminaria en los meses adyacentes.</li>
-                <li><strong>Depuración de Duplicados Horizontales:</strong> Eliminación de registros idénticos de infraestructura urbana que se repiten mes a mes de forma inalterada, aislando únicamente los cambios de estado operativos.</li>
+
+                <li>
+                    <strong>Alineación de Esquemas (Schema Alignment):</strong>
+                    Verificación de que las cabeceras mantengan el mismo orden y codificación de caracteres en todos los archivos mensuales.
+                </li>
+
+                <li>
+                    <strong>Gestión de Valores Nulos:</strong>
+                    Tratamiento de campos vacíos en variables críticas como consumo energético, coordenadas o identificadores de luminarias.
+                </li>
+
+                <li>
+                    <strong>Depuración de Duplicados:</strong>
+                    Eliminación de registros repetidos dentro del histórico consolidado del alumbrado público de Bogotá.
+                </li>
+
             </ul>
         </div>
 
         <div style="margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #27ae60;">
-            <h3 style="color: #2c3e50; margin-bottom: 5px;">3. Transformación e Ingeniería de Características Temporales</h3>
-            <p style="margin-top: 5px; color: #4a5568;">Construcción de nuevas variables a partir de los datos consolidados para exponer patrones ocultos ante los algoritmos de Machine Learning:</p>
+
+            <h3 style="color: #2c3e50; margin-bottom: 5px;">
+                3. Transformación e Ingeniería de Características Temporales
+            </h3>
+
+            <p style="margin-top: 5px; color: #4a5568;">
+                Construcción de nuevas variables a partir de los datos históricos para identificar patrones de comportamiento y anticipar posibles fallas.
+            </p>
+
             <ul style="color: #4a5568;">
-                <li><strong>Cálculo de Pendientes de Consumo:</strong> Creación de una variable matemática que mide el diferencial de consumo eléctrico de cada luminaria mes a mes (ej. Variación porcentual de consumo entre `MAY.csv` y `JUN.csv`).</li>
-                <li><strong>Cálculo de Tasa de Fallas Acumulada:</strong> Variable incremental que computa cuántas alertas técnicas ha acumulado una luminaria específica desde enero de 2023 hasta el mes en evaluación.</li>
-                <li><strong>Codificación de Tecnologías:</strong> Conversión de variables categóricas (como el tipo de tecnología o fabricante de la luminaria) en variables numéricas utilizables mediante técnicas de *One-Hot Encoding*.</li>
-                <li><strong>Normalización de Escalas:</strong> Escalado de las métricas de potencia eléctrica urbana para asegurar que las diferencias de consumo no generen sesgos técnicos en el modelo predictivo final.</li>
+
+                <li>
+                    <strong>Cálculo de Pendientes de Consumo:</strong>
+                    Variación mensual del consumo energético de cada luminaria.
+                </li>
+
+                <li>
+                    <strong>Tasa de Fallas Acumuladas:</strong>
+                    Conteo progresivo de alertas técnicas registradas por luminaria.
+                </li>
+
+                <li>
+                    <strong>Codificación de Tecnologías:</strong>
+                    Conversión de variables categóricas mediante técnicas de One-Hot Encoding.
+                </li>
+
+                <li>
+                    <strong>Normalización de Escalas:</strong>
+                    Escalado de métricas eléctricas para evitar sesgos en el modelo predictivo.
+                </li>
+
             </ul>
         </div>
 
         <div style="margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #27ae60;">
-            <h3 style="color: #2c3e50; margin-bottom: 5px;">4. Documentación y Linaje de Datos</h3>
-            <p style="margin-top: 5px; color: #4a5568;">Mapeo formal del flujo de transformación del dato. Se documenta la lógica de consolidación de los archivos de 2023 para garantizar que, cuando se agreguen periodos posteriores (como los meses faltantes o históricos de años siguientes), el algoritmo de preprocesamiento se ejecute bajo las mismas reglas y condiciones operativas exactas, manteniendo la consistencia del sistema predictivo.</p>
+
+            <h3 style="color: #2c3e50; margin-bottom: 5px;">
+                4. Documentación y Linaje de Datos
+            </h3>
+
+            <p style="margin-top: 5px; color: #4a5568;">
+                Se documenta el flujo completo de transformación y consolidación de datos del sistema de alumbrado público de Bogotá para garantizar consistencia, trazabilidad y reproducibilidad cuando se incorporen nuevos históricos o periodos futuros.
+            </p>
+
         </div>
+
     </section>
 
 </div>
