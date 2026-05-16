@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="card" style="padding: 25px; max-width: 850px; margin: 20px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6;">
+
+    <header style="margin-bottom: 30px;">
+        <h1 style="color: #2c3e50; font-size: 24pt; margin-bottom: 5px;">Predicción de Fallas en Alumbrado Público</h1>
+        <p style="font-size: 11pt; color: #7f8c8d; margin: 0;">Fase I: Planteamiento del Problema y Entendimiento del Negocio</p>
+        <p style="font-size: 10pt; color: #16a085; font-weight: bold; margin-top: 5px;">Autor: Julian Tovar</p>
+    </header>
+
+    <div style="text-align: center; margin-bottom: 25px;">
+        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80" 
+             alt="Infraestructura de Alumbrado Público Inteligente"
+             style="width:100%; max-width:600px; border-radius:8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    </div>
+
+    <section style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #2980b9; border-radius: 4px; margin-bottom: 30px;">
+        <h3 style="margin-top: 0; color: #2980b9;">Ficha Resumen del Caso de Uso</h3>
+        <p><strong>Tipo de Aprendizaje:</strong> Aprendizaje Supervisado (Clasificación binaria y multiclase / Modelos de Regresión para consumo espacial).</p>
+        <p><strong>Datos de Entrada (Input):</strong> Historial consolidado de reportes ciudadanos (atención a PQRS), inventario de infraestructura urbana y series temporales de consumo energético indexadas por subestación y nodo.</p>
+        <p><strong>Resultado Esperado (Output):</strong> Probabilidad de falla por luminaria o sector dentro de una ventana de 7 días (Clasificación: Operativo / Alerta de Degradación / Falla Crítica).</p>
+        <p><strong>Relevancia:</strong> Automatiza la detección temprana, mitiga los puntos ciegos de inseguridad urbana provocados por apagones y optimiza el despliegue de cuadrillas de mantenimiento técnico, reduciendo drásticamente los costos operativos reactivos.</p>
+    </section>
+
+    <section style="margin-bottom: 30px;">
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">1. Planteamiento del Problema</h2>
+        <p>La gestión del alumbrado público en las ciudades modernas enfrenta un desafío crítico: la naturaleza reactiva del mantenimiento. Actualmente, la identificación de luminarias defectuosas depende casi exclusivamente de las denuncias de los ciudadanos o de inspecciones visuales periódicas y costosas. Esto genera ventanas prolongadas de tiempo donde las calles permanecen a oscuras, incrementando de manera directa los índices de percepción de inseguridad, facilitando entornos propicios para la delincuencia y aumentando el riesgo de accidentes de tráfico.</p>
+        <p>Por otro lado, desde la perspectiva operativa, atender las fallas bajo un esquema de emergencia no planificado eleva los costos logísticos, el consumo de combustible de las flotas técnicas y el desgaste de repuestos. Existe una correlación invisible entre las anomalías previas en el consumo energético de los nodos de iluminación y los patrones de reportes ciudadanos reiterados que, si se analizan mediante analítica predictiva, permitirían anticipar el colapso de los componentes antes de que la bombilla o el circuito fallen por completo.</p>
+    </section>
+
+    <section>
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">2. Entendimiento del Negocio y los Datos</h2>
+        <p style="font-style: italic; color: #555;">Según Schmid, Wurst, & Wirth (2020), esta etapa sienta las bases para todo el desarrollo posterior, garantizando que el esfuerzo técnico esté alineado con las necesidades reales de la organización.</p>
+        
+        <div style="margin-top: 20px;">
+            <p><strong>A. Objetivos de Negocio:</strong></p>
+            <p style="margin-left: 20px; color: #34495e;">Traducir las necesidades de la administración urbana (reducción de tiempos de reparación y optimización del gasto público) en metas analíticas medibles. El objetivo técnico es construir un clasificador con un Recall superior al 85% para asegurar que la mayoría de las fallas reales sean anticipadas y programadas en las rutas de mantenimiento de la semana siguiente.</p>
+
+            <p><strong>B. Preguntas Clave del Proyecto:</strong></p>
+            <p style="margin-left: 20px; color: #34495e;">El modelo debe ser capaz de responder a interrogantes operativas críticas: ¿Existe un patrón estacional o climático que aumente la tasa de fallas? ¿Qué sectores de la ciudad muestran caídas anómalas de consumo eléctrico antes de un apagón masivo? ¿Qué tipologías de luminarias presentan menor tiempo de vida útil basándose en el comportamiento histórico?</p>
+
+            <p><strong>C. Evaluación de Datos Existentes:</strong></p>
+            <p style="margin-left: 20px; color: #34495e;">Exploración exhaustiva de la calidad, relevancia y suficiencia de las fuentes accesibles. Se evalúa la granularidad de los reportes de los ciudadanos (fecha, hora, geolocalización aproximada, descripción textual del daño) y la frecuencia de lectura de los medidores de energía eléctrica para validar si la telemetría disponible posee el histórico suficiente para entrenar algoritmos de Machine Learning.</p>
+
+            <p><strong>D. Análisis de Viabilidad y Riesgos:</strong></p>
+            <p style="margin-left: 20px; color: #34495e;">Consideración de las limitaciones técnicas (capacidad de cómputo de los servidores locales) y organizacionales (resistencia al cambio por parte de los operadores tradicionales de mantenimiento). Se mapean riesgos como el desbalanceo extremo de clases (hay muchas más luminarias estables que defectuosas) para diseñar estrategias tempranas de mitigación.</p>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumbrado Público</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-container">
+
+        <!-- HOME -->
+        <div class="nav-item">
+            <a href="/">Home</a>
+        </div>
+
+        <!-- PLANTEAMIENTO -->
+        <div class="nav-item">
+            <a href="/planteamiento">Planteamiento</a>
+        </div>
+
+        <!-- INGENIERIA DE DATOS -->
+        <div class="nav-item">
+            <a href="/datos">Ingeniería de Datos</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="container">
+
+    {% block content %}
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Alumbrado Público</h1>
+            <p>
+                Predicción de fallos en el alumbrado público mediante 
+                análisis de reportes ciudadanos y consumo energético
+            </p>
+        </div>
+    </div>
+
+    <!-- CARD 1 -->
+    <div class="card">
+        <h2>Objetivo</h2>
+        <p>
+            Analizar información del sistema de alumbrado público para 
+            identificar posibles fallos y optimizar el mantenimiento.
+        </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+        <h2>Datos Utilizados</h2>
+        <p>
+            Reportes ciudadanos, consumo energético, ubicación de luminarias 
+            y registros históricos de mantenimiento.
+        </p>
+    </div>
+
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

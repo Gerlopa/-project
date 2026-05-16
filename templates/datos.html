@@ -1,0 +1,60 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="card" style="padding: 25px; max-width: 850px; margin: 20px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6;">
+
+    <header style="margin-bottom: 30px;">
+        <h1 style="color: #2c3e50; font-size: 24pt; margin-bottom: 5px;">Predicción de Fallas en Alumbrado Público</h1>
+        <p style="font-size: 11pt; color: #7f8c8d; margin: 0;">Fase II: Pipeline Técnico de Ingeniería de Datos</p>
+        <p style="font-size: 10pt; color: #9b59b6; font-weight: bold; margin-top: 5px;">Estrategia de Preparación de Dataset Multifuente</p>
+    </header>
+
+    <section style="background-color: #fafafa; padding: 20px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 30px;">
+        <h2 style="color: #8e44ad; margin-top: 0; font-size: 16pt;">El Pilar de la Robustez Predictiva</h2>
+        <p style="margin-bottom: 0;">La ingeniería de datos constituye un pilar fundamental en el proceso de Machine Learning. Esta fase se centra en preparar adecuadamente los datos para el modelado, maximizando su potencial predictivo y minimizando riesgos de sesgo o sobreajuste. Según el estándar de <strong>ML-Ops.org</strong>, todas las transformaciones y decisiones deben documentarse meticulosamente para garantizar la reproducibilidad del proceso, facilitando así futuras revisiones o actualizaciones del modelo.</p>
+    </section>
+
+    <section>
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">Procesos del Ciclo de Datos</h2>
+        
+        <div style="margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #8e44ad;">
+            <h3 style="color: #2c3e50; margin-bottom: 5px;">1. Selección e Integración de Fuentes</h3>
+            <p style="margin-top: 5px; color: #4a5568;">El reto principal radica en unificar dos universos de datos heterogéneos: datos cualitativos desestructurados e históricos cuantitativos continuos.</p>
+            <ul style="color: #4a5568;">
+                <li><strong>Fuente A:</strong> Logs del sistema de atención ciudadana (CRM de la alcaldía o aplicaciones móviles de reportes urbanos).</li>
+                <li><strong>Fuente B:</strong> Telemetría de consumo eléctrico (lecturas de kWh consumidos por transformador o nodo inteligente distribuidos en la red).</li>
+                <li><strong>Fuente C:</strong> Dataset base de catastro técnico (coordenadas geográficas exactas, tipo de tecnología de la luminaria [Sodio, LED], potencia en vatios y año de instalación).</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #8e44ad;">
+            <h3 style="color: #2c3e50; margin-bottom: 5px;">2. Limpieza de Datos y Gestión de Anomalías</h3>
+            <p style="margin-top: 5px; color: #4a5568;">Corrección activa de errores operativos y formateo estricto para evitar ruido en el entrenamiento de los algoritmos:</p>
+            <ul style="color: #4a5568;">
+                <li><strong>Tratamiento de Nulos:</strong> Imputación inteligente de datos faltantes en el consumo usando la mediana móvil del sector para no alterar las tendencias estacionales.</li>
+                <li><strong>Errores de Redacción:</strong> Estandarización mediante técnicas básicas de NLP para unificar reportes manuales similares (ej: convertir "poste apagado", "luz mala", "no alumbra" en una única categoría etiquetada como Falla_Luminaria).</li>
+                <li><strong>Eliminación de Duplicados:</strong> Descartar reportes ciudadanos masivos referidos a un mismo evento eléctrico en una ventana de 24 horas para evitar la inflación artificial de registros de incidentes.</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #8e44ad;">
+            <h3 style="color: #2c3e50; margin-bottom: 5px;">3. Transformación e Ingeniería de Características (Feature Engineering)</h3>
+            <p style="margin-top: 5px; color: #4a5568;">Creación de nuevas variables matemáticas que expongan correlaciones ocultas que el algoritmo pueda aprender:</p>
+            <ul style="color: #4a5568;">
+                <li><strong>Métricas de Variación de Consumo:</strong> Cálculo del porcentaje de desviación del consumo eléctrico de los últimos 3 días respecto al promedio móvil histórico del mes en curso. Una caída drástica sin causa justificada es un fuerte indicador de falla de circuito.</li>
+                <li><strong>Variables Temporales:</strong> Extracción de componentes cíclicas a partir de las marcas de tiempo (Día de la semana, mes, temporada de lluvias/sequía) mediante codificación sinusoidal.</li>
+                <li><strong>Densidad Espacial de Incidentes:</strong> Cálculo de un índice de criticidad basado en la proximidad geográfica de reportes previos en un radio de 200 metros a la redonda de la luminaria analizada.</li>
+                <li><strong>Normalización:</strong> Escalado Min-Max de las métricas de consumo y potencia para asegurar que las diferencias de magnitud no sesguen algoritmos basados en distancias (como KNN, SVM o Redes Neuronales).</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #8e44ad;">
+            <h3 style="color: #2c3e50; margin-bottom: 5px;">4. Documentación y Linaje de Datos</h3>
+            <p style="margin-top: 5px; color: #4a5568;">Registro estructurado de metadatos que mapea el ciclo de vida del dato desde su origen crudo hasta el dataset final de entrenamiento. Esto asegura que cualquier auditoría técnica, actualización del modelo físico o re-entrenamiento con nuevos datos de consumo se ejecute bajo las mismas reglas exactas de transformación, garantizando la gobernanza del dato en producción.</p>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
