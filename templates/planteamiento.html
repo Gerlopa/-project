@@ -1,67 +1,121 @@
-<h3>Business Objectives</h3>
+{% extends "index.html" %}
 
-<p>
-To develop a machine learning model capable of predicting potential failures in the public lighting system by analyzing citizen reports and energy consumption data, with the purpose of optimizing maintenance operations and reducing response times.
-</p>
+{% block content %}
 
-<h3>Key Questions</h3>
+<div class="card">
 
-<ul>
-    <li>Which areas have the highest probability of failures?</li>
+    <header style="margin-bottom: 30px;">
+        <h1 style="color: #2c3e50; font-size: 24pt; margin-bottom: 5px;">
+            Public Lighting Failure Prediction in Bogotá
+        </h1>
 
-    <li>Is there a relationship between energy consumption and reported failures?</li>
+        <p style="font-size: 11pt; color: #7f8c8d; margin: 0;">
+            Phase I: Problem Definition and Business Understanding
+        </p>
 
-    <li>Which type of light fixture fails most frequently?</li>
+        <p style="font-size: 10pt; color: #e74c3c; font-weight: bold; margin-top: 5px;">
+            Case Study: Monthly Consolidated Public Lighting Records of Bogotá (2023)
+        </p>
+    </header>
 
-    <li>Can patterns be identified based on location or the technology used?</li>
+    <section style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #c0392b; border-radius: 4px; margin-bottom: 30px;">
+        <h3 style="margin-top: 0; color: #c0392b;">Case Study Summary</h3>
 
-    <li>How can preventive maintenance be prioritized efficiently?</li>
-</ul>
+        <p><strong>City:</strong> Bogotá D.C., Colombia.</p>
 
-<h3>Data Evaluation</h3>
+        <p><strong>Learning Type:</strong> Supervised Learning (Failure classification and predictive analytics).</p>
 
-<p>
-The dataset contains relevant information regarding:
-</p>
+        <p><strong>Input Data:</strong> Structured datasets from monthly public lighting reports, citizen complaints, and energy consumption data.</p>
 
-<ul>
-    <li>Number of light fixtures,</li>
+        <p><strong>Expected Output:</strong> Prediction of possible failures and identification of critical lighting zones.</p>
 
-    <li>Type of technology (LED, sodium, halogen),</li>
+        <p><strong>Relevance:</strong> The project seeks to improve preventive maintenance strategies, reduce operational costs, and optimize response times in the public lighting system.</p>
+    </section>
 
-    <li>Distribution by location,</li>
+    <section style="margin-bottom: 30px;">
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">
+            1. Business Objectives
+        </h2>
 
-    <li>Percentage of LED light fixtures.</li>
-</ul>
+        <p>
+            To develop a machine learning model capable of predicting potential failures in the public lighting system by analyzing citizen reports and energy consumption data, with the purpose of optimizing maintenance operations and reducing response times.
+        </p>
+    </section>
 
-<p>
-The data is useful for identifying consumption patterns and potential critical areas. However, it would be ideal to complement it with:
-</p>
+    <section style="margin-bottom: 30px;">
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">
+            2. Key Questions
+        </h2>
 
-<ul>
-    <li>Citizen reports,</li>
+        <ul>
+            <li>Which areas have the highest probability of failures?</li>
 
-    <li>Maintenance history,</li>
+            <li>Is there a relationship between energy consumption and reported failures?</li>
 
-    <li>Detailed energy consumption data,</li>
+            <li>Which type of light fixture fails most frequently?</li>
 
-    <li>Dates and frequency of failures.</li>
-</ul>
+            <li>Can patterns be identified based on location or the technology used?</li>
 
-<h3>Feasibility Analysis</h3>
+            <li>How can preventive maintenance be prioritized efficiently?</li>
+        </ul>
+    </section>
 
-<p>
-The project is technically feasible because the available data enables predictive analysis through machine learning techniques. However, some limitations must be considered:
-</p>
+    <section style="margin-bottom: 30px;">
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">
+            3. Data Evaluation
+        </h2>
 
-<ul>
-    <li>Possible lack of historical failure data,</li>
+        <p>
+            The dataset contains relevant information regarding:
+        </p>
 
-    <li>Incomplete or outdated information,</li>
+        <ul>
+            <li>Number of light fixtures,</li>
 
-    <li>The need to integrate multiple information sources.</li>
-</ul>
+            <li>Type of technology (LED, sodium, halogen),</li>
 
-<p>
-Despite these limitations, the project can contribute significantly to improving public lighting management, reducing operational costs, and enabling more efficient preventive maintenance strategies.
-</p>
+            <li>Distribution by location,</li>
+
+            <li>Percentage of LED light fixtures.</li>
+        </ul>
+
+        <p>
+            The data is useful for identifying consumption patterns and potential critical areas. However, it would be ideal to complement it with:
+        </p>
+
+        <ul>
+            <li>Citizen reports,</li>
+
+            <li>Maintenance history,</li>
+
+            <li>Detailed energy consumption data,</li>
+
+            <li>Dates and frequency of failures.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">
+            4. Feasibility Analysis
+        </h2>
+
+        <p>
+            The project is technically feasible because the available data enables predictive analysis through machine learning techniques. However, some limitations must be considered:
+        </p>
+
+        <ul>
+            <li>Possible lack of historical failure data,</li>
+
+            <li>Incomplete or outdated information,</li>
+
+            <li>The need to integrate multiple information sources.</li>
+        </ul>
+
+        <p>
+            Despite these limitations, the project can contribute significantly to improving public lighting management, reducing operational costs, and enabling more efficient preventive maintenance strategies.
+        </p>
+    </section>
+
+</div>
+
+{% endblock %}
