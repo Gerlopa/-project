@@ -18,7 +18,7 @@ Monthly public lighting records of Bogotá (2023), including:
 - Infrastructure statistics
 
 by:
-Michelle Dallane Pedraza Gonzalez
-Deivid Andres Real
-Natalia Katterinne Chaparro Cordero
+Michelle Dallane Pedraza Gonzalez,
+Deivid Andres Real Franco,
+Natalia Katterinne Chaparro Cordero,
 Julian David Tovar Delgadillo
