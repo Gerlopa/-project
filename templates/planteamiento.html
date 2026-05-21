@@ -1,89 +1,67 @@
-{% extends "index.html" %}
+<h3>Business Objectives</h3>
 
-{% block content %}
+<p>
+To develop a machine learning model capable of predicting potential failures in the public lighting system by analyzing citizen reports and energy consumption data, with the purpose of optimizing maintenance operations and reducing response times.
+</p>
 
-<div class="card" style="padding: 25px; max-width: 850px; margin: 20px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6;">
+<h3>Key Questions</h3>
 
-    <header style="margin-bottom: 30px;">
-        <h1 style="color: #2c3e50; font-size: 24pt; margin-bottom: 5px;">
-            Predicción de Fallas en Alumbrado Público de Bogotá
-        </h1>
+<ul>
+    <li>Which areas have the highest probability of failures?</li>
 
-        <p style="font-size: 11pt; color: #7f8c8d; margin: 0;">
-            Fase I: Planteamiento del Problema y Entendimiento del Negocio
-        </p>
+    <li>Is there a relationship between energy consumption and reported failures?</li>
 
-        <p style="font-size: 10pt; color: #e74c3c; font-weight: bold; margin-top: 5px;">
-            Caso de Estudio: Históricos Consolidados Mensuales de Bogotá (Anual 2023)
-        </p>
-    </header>
+    <li>Which type of light fixture fails most frequently?</li>
 
-    <section style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #c0392b; border-radius: 4px; margin-bottom: 30px;">
-        <h3 style="margin-top: 0; color: #c0392b;">Ficha Resumen del Caso de Uso</h3>
+    <li>Can patterns be identified based on location or the technology used?</li>
 
-        <p><strong>Ciudad:</strong> Bogotá D.C., Colombia.</p>
+    <li>How can preventive maintenance be prioritized efficiently?</li>
+</ul>
 
-        <p><strong>Tipo de Aprendizaje:</strong> Aprendizaje Supervisado (Clasificación de fallas operativas y analítica predictiva de series de tiempo).</p>
+<h3>Data Evaluation</h3>
 
-        <p><strong>Datos de Entrada (Input):</strong> Datasets multifuente estructurados a partir del Consolidado Mensual de Luminarias de Alumbrado Público de Bogotá (Histórico 2023) desde Enero hasta Noviembre, cruzados con logs de reportes de fallas ciudadanas.</p>
+<p>
+The dataset contains relevant information regarding:
+</p>
 
-        <p><strong>Resultado Esperado (Output):</strong> Probabilidad de falla y detección de anomalías de consumo por identificador único de luminaria para los periodos subsiguientes.</p>
+<ul>
+    <li>Number of light fixtures,</li>
 
-        <p><strong>Relevancia:</strong> Permite transformar los reportes reactivos mensuales en un esquema de mantenimiento predictivo, mitigando las demoras de reparación reportadas a lo largo del histórico anual y optimizando la inversión en infraestructura eléctrica.</p>
-    </section>
+    <li>Type of technology (LED, sodium, halogen),</li>
 
-    <section style="margin-bottom: 30px;">
-        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">
-            1. Planteamiento del Problema
-        </h2>
+    <li>Distribution by location,</li>
 
-        <p>
-            El análisis retrospectivo de la gestión del alumbrado urbano de Bogotá durante el año 2023 ha evidenciado una problemática recurrente: el desfase temporal entre la ocurrencia de una falla técnica en las luminarias y su efectiva reparación. Al depender de un flujo de información fragmentado mensualmente, la administración pública sufre de falta de visibilidad en tiempo real, lo que prolonga los tiempos en que las calles permanecen a oscuras, impactando negativamente en la seguridad ciudadana y el tráfico vial.
-        </p>
+    <li>Percentage of LED light fixtures.</li>
+</ul>
 
-        <p>
-            Los datos operativos se encuentran almacenados en estructuras aisladas por periodos (archivos mensuales desde enero hasta noviembre). Esto dificulta la identificación de patrones de degradación acumulativos en los componentes eléctricos. Las variaciones anómalas en el consumo o los reportes iterativos de fallas que ocurren en la transición de un mes a otro se pierden debido a la falta de una capa analítica unificada. Existe una necesidad crítica de correlacionar el estado técnico consolidado de las luminarias con las dinámicas de comportamiento mensuales para predecir qué nodos del sistema eléctrico colapsarán a corto plazo.
-        </p>
-    </section>
+<p>
+The data is useful for identifying consumption patterns and potential critical areas. However, it would be ideal to complement it with:
+</p>
 
-    <section>
-        <h2 style="color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px;">
-            2. Entendimiento del Negocio y los Datos
-        </h2>
+<ul>
+    <li>Citizen reports,</li>
 
-        <p style="font-style: italic; color: #555;">
-            Según Schmid, Wurst, & Wirth (2020), esta etapa sienta las bases para todo el desarrollo posterior, garantizando que el esfuerzo técnico esté alineado con las necesidades reales de la organización.
-        </p>
+    <li>Maintenance history,</li>
 
-        <div style="margin-top: 20px;">
+    <li>Detailed energy consumption data,</li>
 
-            <p><strong>A. Objetivos de Negocio:</strong></p>
+    <li>Dates and frequency of failures.</li>
+</ul>
 
-            <p style="margin-left: 20px; color: #34495e;">
-                Modelar matemáticamente el comportamiento operativo anual del alumbrado público de Bogotá a partir de la infraestructura registrada en 2023 para mitigar costos logísticos de reparación reactiva. El éxito se define al disminuir en un 20% el tiempo promedio de respuesta institucional mediante la planificación anticipada de rutas técnicas de sustitución de luminarias.
-            </p>
+<h3>Feasibility Analysis</h3>
 
-            <p><strong>B. Preguntas Clave del Proyecto:</strong></p>
+<p>
+The project is technically feasible because the available data enables predictive analysis through machine learning techniques. However, some limitations must be considered:
+</p>
 
-            <p style="margin-left: 20px; color: #34495e;">
-                ¿Cómo varía la tasa de fallas en las luminarias en las transiciones de las temporadas climáticas reflejadas entre los meses de verano (ej. Julio-Agosto) frente a los meses de lluvia? ¿Qué porcentaje de las luminarias registradas en el consolidado mensual reincide en fallas técnicas a lo largo del año? ¿Existe un comportamiento anómalo en el consumo energético global que anticipe un apagón en un nodo específico?
-            </p>
+<ul>
+    <li>Possible lack of historical failure data,</li>
 
-            <p><strong>C. Evaluación de Datos Existentes:</strong></p>
+    <li>Incomplete or outdated information,</li>
 
-            <p style="margin-left: 20px; color: #34495e;">
-                Validación del inventario mensual disponible. Se analiza la integridad física y conceptual de las variables presentes en las pestañas y archivos mensuales de 2023 (ENE.csv, FEB.csv ... NOV.csv), verificando si mantienen consistencia en sus tipos de datos, identificadores únicos de postes de luz, codificaciones de fallas y registros de consumo de energía eléctrica.
-            </p>
+    <li>The need to integrate multiple information sources.</li>
+</ul>
 
-            <p><strong>D. Análisis de Viabilidad y Riesgos:</strong></p>
-
-            <p style="margin-left: 20px; color: #34495e;">
-                Evaluación del riesgo de estacionalidad y pérdida de linaje de datos al realizar la unión de los 11 archivos mensuales. Se contempla la viabilidad del procesamiento en lote (batch processing) para unificar el histórico completo sin generar distorsiones por cambios internos de nomenclatura o modificaciones metodológicas en el levantamiento de datos a mitad de año.
-            </p>
-
-        </div>
-    </section>
-
-</div>
-
-{% endblock %}
+<p>
+Despite these limitations, the project can contribute significantly to improving public lighting management, reducing operational costs, and enabling more efficient preventive maintenance strategies.
+</p>
