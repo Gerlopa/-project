@@ -1,0 +1,130 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="card">
+    <header style="margin-bottom: 25px;">
+        <h1 style="color:#2c3e50;">XGBoost Explanation</h1>
+        <p style="color:#7f8c8d;">Machine Learning Model for Public Lighting Failure Risk Prediction</p>
+    </header>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">1. What is XGBoost?</h2>
+    <p>
+        XGBoost (Extreme Gradient Boosting) is an optimized gradient
+        boosting algorithm known for its speed, scalability, and
+        outstanding performance on structured tabular data. It has
+        become one of the most widely used algorithms in data science
+        competitions and real-world applications.
+    </p>
+    <p>In this project, XGBoost classifies Bogotá's public lighting infrastructure into:</p>
+    <ul>
+        <li><strong>Low Failure Risk</strong></li>
+        <li><strong>Medium Failure Risk</strong></li>
+        <li><strong>High Failure Risk</strong></li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">2. How Does XGBoost Work?</h2>
+    <p>
+        XGBoost builds an ensemble of decision trees sequentially.
+        Each new tree focuses on correcting the residual errors of
+        the previous trees. It uses second-order gradient information
+        (both gradient and Hessian) to optimize the loss function more
+        precisely than standard gradient boosting.
+    </p>
+    <div style="background:#f4f6f7; padding:20px; border-radius:10px; margin-top:15px; text-align:center; font-size:18px; font-weight:bold; color:#2c3e50;">
+        Obj = Σ L(yᵢ, ŷᵢ) + Σ Ω(fₖ)
+    </div>
+    <p style="margin-top:15px;">Where:</p>
+    <ul>
+        <li><strong>L(yᵢ, ŷᵢ)</strong> = Loss function measuring prediction error</li>
+        <li><strong>Ω(fₖ)</strong> = Regularization term controlling tree complexity</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">3. Variables Used in the Model</h2>
+    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+        <tr style="background:#e67e22; color:white;">
+            <th style="padding:12px;">Variable</th>
+            <th style="padding:12px;">Description</th>
+        </tr>
+        <tr>
+            <td style="padding:12px;">% LED</td>
+            <td style="padding:12px;">Percentage of LED infrastructure per locality</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+            <td style="padding:12px;">TOTAL</td>
+            <td style="padding:12px;">Total public lighting points per locality</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">4. Key Features of XGBoost</h2>
+    <ul>
+        <li><strong>Regularization:</strong> Built-in L1 and L2 regularization to prevent overfitting.</li>
+        <li><strong>Second-order optimization:</strong> Uses both gradient and Hessian for more precise updates.</li>
+        <li><strong>Parallel tree construction:</strong> Builds trees faster using parallelized computations.</li>
+        <li><strong>Built-in cross-validation:</strong> Supports early stopping to find the optimal number of trees.</li>
+        <li><strong>Sparsity awareness:</strong> Handles missing values natively.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">5. Application in This Project</h2>
+    <p>
+        XGBoost is applied to classify lighting failure risk using
+        LED adoption rates and total luminaire counts. Its regularization
+        capabilities help prevent overfitting on the relatively small
+        dataset of Bogotá's public lighting records.
+    </p>
+    <p>The model helps identify:</p>
+    <ul>
+        <li>High-risk localities requiring urgent maintenance</li>
+        <li>Zones with low LED adoption and elevated failure probability</li>
+        <li>Infrastructure patterns associated with high risk levels</li>
+        <li>Comparative risk assessment across Bogotá's localities</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">6. Advantages of XGBoost</h2>
+    <ul>
+        <li>Industry standard for structured tabular data</li>
+        <li>Built-in regularization reduces overfitting</li>
+        <li>Handles missing values automatically</li>
+        <li>Provides feature importance scores</li>
+        <li>Supports early stopping for optimal tree count</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">7. Model Limitations</h2>
+    <ul>
+        <li>More hyperparameters to tune than simpler models</li>
+        <li>Can overfit on very small datasets without regularization</li>
+        <li>Slower than LightGBM on large datasets</li>
+        <li>Risk labels are estimated rather than obtained from real failures</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">8. Conclusion</h2>
+    <p>
+        XGBoost provides a powerful and well-regularized approach for
+        estimating public lighting failure risk. Its combination of
+        gradient boosting with built-in regularization makes it
+        particularly robust against overfitting, even with small datasets.
+    </p>
+    <p>
+        As one of the most trusted algorithms in applied machine learning,
+        XGBoost delivers reliable risk classifications that support
+        data-driven maintenance planning for Bogotá's public lighting system.
+    </p>
+</div>
+
+{% endblock %}

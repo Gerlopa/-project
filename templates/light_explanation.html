@@ -1,0 +1,141 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="card">
+    <header style="margin-bottom: 25px;">
+        <h1 style="color:#2c3e50;">LightGBM Explanation</h1>
+        <p style="color:#7f8c8d;">Machine Learning Model for Public Lighting Failure Risk Prediction</p>
+    </header>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">1. What is LightGBM?</h2>
+    <p>
+        LightGBM (Light Gradient Boosting Machine) is a high-performance
+        gradient boosting framework developed by Microsoft. It is designed
+        to be faster and more memory-efficient than traditional boosting
+        algorithms while maintaining high accuracy.
+    </p>
+    <p>In this project, LightGBM classifies Bogotá's public lighting infrastructure into:</p>
+    <ul>
+        <li><strong>Low Failure Risk</strong></li>
+        <li><strong>Medium Failure Risk</strong></li>
+        <li><strong>High Failure Risk</strong></li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">2. How Does LightGBM Work?</h2>
+    <p>
+        LightGBM builds trees sequentially, where each new tree corrects
+        the errors made by the previous ones. Unlike traditional algorithms
+        that grow trees level by level, LightGBM uses a leaf-wise growth
+        strategy that finds the best split at any leaf, leading to deeper
+        and more accurate trees.
+    </p>
+    <div style="background:#f4f6f7; padding:20px; border-radius:10px; margin-top:15px; text-align:center; font-size:18px; font-weight:bold; color:#2c3e50;">
+        F(x) = F₀(x) + η · h₁(x) + η · h₂(x) + ... + η · hₙ(x)
+    </div>
+    <p style="margin-top:15px;">Where:</p>
+    <ul>
+        <li><strong>F(x)</strong> = Final prediction</li>
+        <li><strong>η</strong> = Learning rate</li>
+        <li><strong>hₙ(x)</strong> = Each weak learner (tree)</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">3. Variables Used in the Model</h2>
+    <p>LightGBM uses a richer set of features compared to simpler models, capturing locality and temporal patterns.</p>
+    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+        <tr style="background:#8e44ad; color:white;">
+            <th style="padding:12px;">Variable</th>
+            <th style="padding:12px;">Description</th>
+        </tr>
+        <tr>
+            <td style="padding:12px;">% LED</td>
+            <td style="padding:12px;">Percentage of LED infrastructure per locality</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+            <td style="padding:12px;">TOTAL</td>
+            <td style="padding:12px;">Total public lighting points</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;">LED</td>
+            <td style="padding:12px;">Number of LED fixtures</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+            <td style="padding:12px;">Month</td>
+            <td style="padding:12px;">Month encoded as an ordinal number</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;">Locality</td>
+            <td style="padding:12px;">Locality encoded as a numeric value</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">4. Key Innovations of LightGBM</h2>
+    <ul>
+        <li><strong>Leaf-wise tree growth:</strong> Splits the leaf with the highest loss reduction, producing more accurate trees.</li>
+        <li><strong>Gradient-based One-Side Sampling (GOSS):</strong> Retains samples with large gradients and randomly drops small gradient samples, speeding up training.</li>
+        <li><strong>Exclusive Feature Bundling (EFB):</strong> Bundles mutually exclusive features to reduce dimensionality.</li>
+        <li><strong>Histogram-based splitting:</strong> Groups continuous features into bins for faster computation.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">5. Application in This Project</h2>
+    <p>
+        LightGBM is applied to estimate failure risk incorporating
+        locality and temporal features, allowing the model to capture
+        seasonal and geographic patterns in public lighting infrastructure.
+    </p>
+    <p>The model helps identify:</p>
+    <ul>
+        <li>Localities with consistently high risk across months</li>
+        <li>Seasonal patterns in infrastructure degradation</li>
+        <li>Geographic clusters of high-risk zones</li>
+        <li>Temporal trends in LED adoption effectiveness</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">6. Advantages of LightGBM</h2>
+    <ul>
+        <li>Faster training than XGBoost on large datasets</li>
+        <li>Lower memory consumption</li>
+        <li>Handles categorical features natively</li>
+        <li>Excellent performance on tabular data</li>
+        <li>Supports parallel and GPU learning</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">7. Model Limitations</h2>
+    <ul>
+        <li>Prone to overfitting on small datasets without careful tuning</li>
+        <li>Leaf-wise growth can produce unbalanced trees</li>
+        <li>More hyperparameters to tune compared to simpler models</li>
+        <li>Risk labels are estimated rather than obtained from real failures</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">8. Conclusion</h2>
+    <p>
+        LightGBM offers a powerful and efficient solution for classifying
+        public lighting failure risk. Its ability to incorporate locality
+        and temporal features gives it an edge over simpler models,
+        capturing patterns that single-variable approaches may miss.
+    </p>
+    <p>
+        Its speed and accuracy make it particularly well-suited for
+        real-world infrastructure monitoring, supporting proactive
+        maintenance decisions across Bogotá's public lighting network.
+    </p>
+</div>
+
+{% endblock %}

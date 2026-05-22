@@ -1,0 +1,162 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="card">
+    <header style="margin-bottom: 25px;">
+        <h1 style="color:#2c3e50;">K-Means Clustering Explanation</h1>
+        <p style="color:#7f8c8d;">Unsupervised Learning Model for Public Lighting Pattern Discovery</p>
+    </header>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">1. What is K-Means Clustering?</h2>
+    <p>
+        K-Means is an unsupervised machine learning algorithm that groups
+        data points into K clusters based on similarity. Unlike supervised
+        models, it does not require labeled data — it discovers hidden
+        patterns and structures within the dataset on its own.
+    </p>
+    <p>In this project, K-Means groups Bogotá's localities into clusters based on:</p>
+    <ul>
+        <li>LED adoption rates</li>
+        <li>Total luminaire counts</li>
+        <li>Monthly lighting patterns</li>
+        <li>Geographic locality characteristics</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">2. How Does K-Means Work?</h2>
+    <p>The algorithm follows an iterative process to find optimal cluster assignments:</p>
+    <div style="background:#f4f6f7; padding:20px; border-radius:10px; margin-top:15px; text-align:center; font-size:18px; font-weight:bold; color:#2c3e50;">
+        minimize Σ Σ ||xᵢ - μₖ||²
+    </div>
+    <p style="margin-top:15px;">The process consists of four steps:</p>
+    <ul>
+        <li><strong>Step 1 — Initialize:</strong> Randomly place K centroids in the feature space.</li>
+        <li><strong>Step 2 — Assign:</strong> Assign each data point to the nearest centroid.</li>
+        <li><strong>Step 3 — Update:</strong> Recalculate each centroid as the mean of its assigned points.</li>
+        <li><strong>Step 4 — Repeat:</strong> Repeat steps 2 and 3 until centroids no longer move significantly.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">3. Variables Used in the Model</h2>
+    <p>K-Means uses the richest feature set of all models in this project to capture the full context of each locality.</p>
+    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+        <tr style="background:#3498db; color:white;">
+            <th style="padding:12px;">Variable</th>
+            <th style="padding:12px;">Description</th>
+        </tr>
+        <tr>
+            <td style="padding:12px;">% LED</td>
+            <td style="padding:12px;">Percentage of LED infrastructure per locality</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+            <td style="padding:12px;">TOTAL</td>
+            <td style="padding:12px;">Total public lighting points</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;">LED</td>
+            <td style="padding:12px;">Number of LED fixtures</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+            <td style="padding:12px;">Month</td>
+            <td style="padding:12px;">Month encoded as an ordinal number</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;">Locality</td>
+            <td style="padding:12px;">Locality encoded as a numeric value</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">4. Finding the Optimal K</h2>
+    <p>Two methods are used to determine the best number of clusters:</p>
+    <ul>
+        <li>
+            <strong>Elbow Method:</strong> Plots inertia (within-cluster sum of squares)
+            against K. The optimal K is where the curve bends like an elbow,
+            indicating diminishing returns from adding more clusters.
+        </li>
+        <li>
+            <strong>Silhouette Score:</strong> Measures how similar each point is
+            to its own cluster compared to other clusters. A score close to 1.0
+            indicates well-separated, compact clusters.
+        </li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">5. PCA Visualization</h2>
+    <p>
+        Since the model uses 5 features, clusters cannot be visualized
+        directly. Principal Component Analysis (PCA) reduces the data
+        to 2 dimensions while preserving as much variance as possible,
+        allowing clusters to be plotted and interpreted visually.
+    </p>
+    <ul>
+        <li>Each point represents one locality-month record.</li>
+        <li>Colors represent different cluster assignments.</li>
+        <li>Black X markers indicate cluster centroids.</li>
+        <li>The percentage shown reflects how much variance is captured by the 2D projection.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">6. Application in This Project</h2>
+    <p>
+        K-Means is applied to discover natural groupings in Bogotá's
+        public lighting data without relying on predefined risk labels.
+        Each cluster reveals a distinct infrastructure profile.
+    </p>
+    <p>Typical cluster profiles may include:</p>
+    <ul>
+        <li>High LED adoption, large localities with modern infrastructure</li>
+        <li>Mixed technology zones undergoing gradual modernization</li>
+        <li>Small localities with predominantly legacy technology</li>
+        <li>High-density zones with diverse lighting configurations</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">7. Advantages of K-Means</h2>
+    <ul>
+        <li>No labeled data required</li>
+        <li>Simple and computationally efficient</li>
+        <li>Scales well to large datasets</li>
+        <li>Reveals hidden patterns not visible in supervised models</li>
+        <li>Supports infrastructure segmentation for targeted strategies</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">8. Model Limitations</h2>
+    <ul>
+        <li>Requires specifying K in advance (mitigated by Elbow and Silhouette methods)</li>
+        <li>Sensitive to feature scaling (addressed with StandardScaler)</li>
+        <li>Assumes spherical, equally-sized clusters</li>
+        <li>Results may vary with different random initializations</li>
+        <li>Cluster labels have no inherent meaning — interpretation requires domain knowledge</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">9. Conclusion</h2>
+    <p>
+        K-Means Clustering provides a complementary perspective to the
+        supervised models in this project. Rather than predicting a
+        risk label, it discovers natural groupings in the data that
+        reveal structural patterns across Bogotá's localities.
+    </p>
+    <p>
+        Combined with PCA visualization and hierarchical dendrogram analysis,
+        this approach enables a deeper understanding of the public lighting
+        infrastructure, supporting strategic planning and targeted
+        maintenance allocation across the city.
+    </p>
+</div>
+
+{% endblock %}

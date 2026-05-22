@@ -1,0 +1,131 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="card">
+    <header style="margin-bottom: 25px;">
+        <h1 style="color:#2c3e50;">Random Forest Explanation</h1>
+        <p style="color:#7f8c8d;">Machine Learning Model for Public Lighting Failure Risk Prediction</p>
+    </header>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">1. What is Random Forest?</h2>
+    <p>
+        Random Forest is a supervised machine learning algorithm based on the concept
+        of ensemble learning. Instead of relying on a single decision tree, it builds
+        a large collection of trees and combines their predictions to produce a more
+        accurate and stable result.
+    </p>
+    <p>In this project, Random Forest classifies Bogotá's public lighting infrastructure into:</p>
+    <ul>
+        <li><strong>Low Failure Risk</strong></li>
+        <li><strong>Medium Failure Risk</strong></li>
+        <li><strong>High Failure Risk</strong></li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">2. How Does Random Forest Work?</h2>
+    <p>
+        The algorithm creates multiple decision trees during training, each built
+        on a random subset of the data and features. The final prediction is made
+        by aggregating the votes of all trees.
+    </p>
+    <div style="background:#f4f6f7; padding:20px; border-radius:10px; margin-top:15px; text-align:center; font-size:18px; font-weight:bold; color:#2c3e50;">
+        Final Prediction = Majority Vote (Tree₁, Tree₂, ..., Treeₙ)
+    </div>
+    <p style="margin-top:15px;">This process involves two key concepts:</p>
+    <ul>
+        <li><strong>Bagging:</strong> Each tree is trained on a random sample of the data with replacement.</li>
+        <li><strong>Feature randomness:</strong> Each split considers only a random subset of features, reducing correlation between trees.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">3. Variables Used in the Model</h2>
+    <p>The model uses infrastructure variables extracted from Bogotá's monthly public lighting records.</p>
+    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+        <tr style="background:#27ae60; color:white;">
+            <th style="padding:12px;">Variable</th>
+            <th style="padding:12px;">Description</th>
+        </tr>
+        <tr>
+            <td style="padding:12px;">% LED</td>
+            <td style="padding:12px;">Percentage of LED infrastructure per locality</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+            <td style="padding:12px;">TOTAL</td>
+            <td style="padding:12px;">Total public lighting points per locality</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">4. OOB Score — A Unique Feature of Random Forest</h2>
+    <p>
+        Random Forest includes a built-in validation mechanism called
+        Out-Of-Bag (OOB) Score. Since each tree is trained on a random
+        subset, the remaining samples (not used in training) can be used
+        to estimate model accuracy without needing a separate validation set.
+    </p>
+    <ul>
+        <li>OOB Score close to 1.0 indicates strong generalization.</li>
+        <li>It serves as an unbiased estimate of model performance.</li>
+        <li>Useful when the dataset is small, as no data is wasted on validation.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">5. Application in This Project</h2>
+    <p>
+        Random Forest is applied to estimate failure risk in Bogotá's
+        public lighting infrastructure using LED adoption rates and
+        total luminaire counts.
+    </p>
+    <p>The model helps identify:</p>
+    <ul>
+        <li>Critical lighting zones with high failure probability</li>
+        <li>Areas with outdated or mixed technology infrastructure</li>
+        <li>Potential preventive maintenance priorities</li>
+        <li>Zones with strong LED modernization progress</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">6. Advantages of Random Forest</h2>
+    <ul>
+        <li>Robust against overfitting due to tree averaging</li>
+        <li>Handles non-linear relationships naturally</li>
+        <li>Provides feature importance scores</li>
+        <li>Built-in OOB validation without extra data splitting</li>
+        <li>Works well with small and medium-sized datasets</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">7. Model Limitations</h2>
+    <ul>
+        <li>Slower prediction compared to simpler models</li>
+        <li>Less interpretable than a single decision tree</li>
+        <li>Memory-intensive when using many trees</li>
+        <li>Risk labels are estimated rather than obtained from real failures</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 style="color:#2c3e50;">8. Conclusion</h2>
+    <p>
+        Random Forest provides a robust and reliable approach for estimating
+        public lighting failure risk. By combining hundreds of decision trees,
+        the model reduces variance and produces stable predictions even with
+        limited data.
+    </p>
+    <p>
+        Its OOB score and feature importance metrics make it especially
+        valuable for infrastructure analysis, supporting data-driven
+        maintenance decisions for Bogotá's public lighting system.
+    </p>
+</div>
+
+{% endblock %}

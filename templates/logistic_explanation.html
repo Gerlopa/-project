@@ -1,0 +1,263 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <header style="margin-bottom: 25px;">
+
+        <h1 style="color:#2c3e50;">
+            Logistic Regression Explanation
+        </h1>
+
+        <p style="color:#7f8c8d;">
+            Machine Learning Model for Public Lighting Failure Risk Prediction
+        </p>
+
+    </header>
+
+</div>
+
+<!-- WHAT IS LOGISTIC REGRESSION -->
+
+<div class="card">
+
+    <h2 style="color:#2c3e50;">
+        1. What is Logistic Regression?
+    </h2>
+
+    <p>
+        Logistic Regression is a supervised machine learning algorithm
+        used for classification tasks. Its purpose is to predict the
+        probability that a data sample belongs to a specific category.
+    </p>
+
+    <p>
+        In this project, Logistic Regression is used to classify
+        Bogotá’s public lighting infrastructure into:
+    </p>
+
+    <ul>
+        <li><strong>Low Failure Risk</strong></li>
+        <li><strong>Medium Failure Risk</strong></li>
+        <li><strong>High Failure Risk</strong></li>
+    </ul>
+
+</div>
+
+<!-- HOW IT WORKS -->
+
+<div class="card">
+
+    <h2 style="color:#2c3e50;">
+        2. How Does Logistic Regression Work?
+    </h2>
+
+    <p>
+        The model analyzes relationships between infrastructure variables
+        and predicts the probability of belonging to a specific risk category.
+    </p>
+
+    <p>
+        Logistic Regression transforms the prediction into probabilities
+        using a mathematical function called the sigmoid function.
+    </p>
+
+    <div style="
+        background:#f4f6f7;
+        padding:20px;
+        border-radius:10px;
+        margin-top:15px;
+        text-align:center;
+        font-size:20px;
+        font-weight:bold;
+        color:#2c3e50;
+    ">
+
+        P(Y) = 1 / (1 + e<sup>-z</sup>)
+
+    </div>
+
+    <p style="margin-top:15px;">
+        Where:
+    </p>
+
+    <ul>
+        <li><strong>P(Y)</strong> = Probability of a specific class</li>
+
+        <li><strong>e</strong> = Euler’s number</li>
+
+        <li><strong>z</strong> = Combination of the input variables</li>
+    </ul>
+
+</div>
+
+<!-- VARIABLES -->
+
+<div class="card">
+
+    <h2 style="color:#2c3e50;">
+        3. Variables Used in the Model
+    </h2>
+
+    <p>
+        The model uses infrastructure-related variables extracted from
+        Bogotá’s monthly public lighting records.
+    </p>
+
+    <table style="
+        width:100%;
+        border-collapse:collapse;
+        margin-top:20px;
+    ">
+
+        <tr style="background:#88c147; color:white;">
+
+            <th style="padding:12px;">Variable</th>
+
+            <th style="padding:12px;">Description</th>
+
+        </tr>
+
+        <tr>
+            <td style="padding:12px;">LED</td>
+            <td style="padding:12px;">Number of LED light fixtures</td>
+        </tr>
+
+        <tr style="background:#f8f9fa;">
+            <td style="padding:12px;">Mh</td>
+            <td style="padding:12px;">Metal halide light fixtures</td>
+        </tr>
+
+        <tr>
+            <td style="padding:12px;">Na</td>
+            <td style="padding:12px;">Sodium light fixtures</td>
+        </tr>
+
+        <tr style="background:#f8f9fa;">
+            <td style="padding:12px;">TOTAL</td>
+            <td style="padding:12px;">Total public lighting points</td>
+        </tr>
+
+        <tr>
+            <td style="padding:12px;">% LED</td>
+            <td style="padding:12px;">Percentage of LED infrastructure</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<!-- APPLICATION -->
+
+<div class="card">
+
+    <h2 style="color:#2c3e50;">
+        4. Application in This Project
+    </h2>
+
+    <p>
+        The Logistic Regression model is applied to estimate potential
+        failure risk in Bogotá’s public lighting infrastructure.
+    </p>
+
+    <p>
+        Since historical failure records are unavailable, the project
+        estimates risk levels using infrastructure characteristics
+        and technological distribution patterns.
+    </p>
+
+    <p>
+        The model helps identify:
+    </p>
+
+    <ul>
+        <li>Critical lighting zones</li>
+
+        <li>Areas with outdated infrastructure</li>
+
+        <li>Potential maintenance priorities</li>
+
+        <li>Technological modernization opportunities</li>
+    </ul>
+
+</div>
+
+<!-- ADVANTAGES -->
+
+<div class="card">
+
+    <h2 style="color:#2c3e50;">
+        5. Advantages of Logistic Regression
+    </h2>
+
+    <ul>
+
+        <li>Easy to implement and interpret</li>
+
+        <li>Fast training process</li>
+
+        <li>Good baseline classification model</li>
+
+        <li>Efficient with structured datasets</li>
+
+        <li>Provides probabilistic predictions</li>
+
+    </ul>
+
+</div>
+
+<!-- LIMITATIONS -->
+
+<div class="card">
+
+    <h2 style="color:#2c3e50;">
+        6. Model Limitations
+    </h2>
+
+    <ul>
+
+        <li>
+            Performance may decrease with highly complex relationships
+        </li>
+
+        <li>
+            Requires sufficient data quality
+        </li>
+
+        <li>
+            Does not naturally capture nonlinear patterns
+        </li>
+
+        <li>
+            Risk labels are estimated rather than obtained from real failures
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- CONCLUSION -->
+
+<div class="card">
+
+    <h2 style="color:#2c3e50;">
+        7. Conclusion
+    </h2>
+
+    <p>
+        Logistic Regression provides a reliable and interpretable approach
+        for estimating public lighting failure risk using infrastructure
+        and technological indicators.
+    </p>
+
+    <p>
+        Although the project does not include real historical failure data,
+        the model enables predictive infrastructure analysis and supports
+        preventive maintenance decision-making strategies for Bogotá’s
+        public lighting system.
+    </p>
+
+</div>
+
+{% endblock %}

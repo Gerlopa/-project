@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Public Lighting</title>
+    <title>Alumbrado Público</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -19,14 +19,85 @@
             <a href="/">Home</a>
         </div>
 
-        <!-- PLANTEAMIENTO -->
+        <!-- APPROACH -->
         <div class="nav-item">
-            <a href="/planteamiento">understanding of the business</a>
+            <a href="/approach">Approach</a>
         </div>
 
-        <!-- INGENIERIA DE DATOS -->
+        <!-- DATA -->
         <div class="nav-item">
-            <a href="/datos">data engineering</a>
+            <a href="/data">Data Engineering</a>
+        </div>
+
+        <!-- MODELS -->
+        <div class="nav-item">
+
+            <a href="#">Models</a>
+
+            <div class="submenu">
+
+                <!-- XGBOOST -->
+                <div class="submenu-item">
+
+                    <a href="#">XGBoost ▸</a>
+
+                    <div class="subsubmenu">
+                        <a href="/xgboost">Application</a>
+                        <a href="/xgboost_explanation">Explanation</a>
+                    </div>
+
+                </div>
+
+                <!-- RANDOM FOREST -->
+                <div class="submenu-item">
+
+                    <a href="#">Random Forest ▸</a>
+
+                    <div class="subsubmenu">
+                        <a href="/forest">Application</a>
+                        <a href="/forest_explanation">Explanation</a>
+                    </div>
+
+                </div>
+
+                <!-- LOGISTIC -->
+                <div class="submenu-item">
+
+                    <a href="#">Logistic Regression ▸</a>
+
+                    <div class="subsubmenu">
+                        <a href="/logistic">Application</a>
+                        <a href="/logistic_explanation">Explanation</a>
+                    </div>
+
+                </div>
+
+                <!-- LIGHTGBM -->
+                <div class="submenu-item">
+
+                    <a href="#">LightGBM ▸</a>
+
+                    <div class="subsubmenu">
+                        <a href="/light">Application</a>
+                        <a href="/light_explanation">Explanation</a>
+                    </div>
+
+                </div>
+
+                <!-- CLUSTERING -->
+                <div class="submenu-item">
+
+                    <a href="#">K-Means Clustering ▸</a>
+
+                    <div class="subsubmenu">
+                        <a href="/clustering">Application</a>
+                        <a href="/clustering_explanation">Explanation</a>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
@@ -49,7 +120,7 @@
 
     <!-- CARD 1 -->
     <div class="card">
-        <h2>objective</h2>
+        <h2>Objective</h2>
         <p>
             Analyze information from the public lighting system to identify potential failures and optimize maintenance.
         </p>
@@ -63,6 +134,7 @@
             Citizen reports, energy consumption, location of streetlights and historical maintenance records.
         </p>
     </div>
+
 
     {% endblock %}
 
