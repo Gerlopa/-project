@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('Agg')
+matplotlib.use("Agg")
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,29 +8,51 @@ import base64
 import os
 import numpy as np
 
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.model_selection import (
+    train_test_split,
+    cross_val_score
+)
+
+from sklearn.preprocessing import (
+    LabelEncoder,
+    StandardScaler
+)
+
 from sklearn.ensemble import RandomForestClassifier
+
 from sklearn.pipeline import Pipeline
+
 from sklearn.metrics import (
-    accuracy_score, precision_score,
-    recall_score, f1_score,
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score,
     ConfusionMatrixDisplay
 )
 
 # =========================
 # PATH
 # =========================
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(BASE_DIR, "data", "datos luz.csv")
 
+file_path = os.path.join(
+    BASE_DIR,
+    "data",
+    "datos luz.csv"
+)
 
 # =========================
-# PREPARAR DATOS
+# LOAD DATA
 # =========================
+
 def load_data():
 
-    df = pd.read_csv(file_path, sep=";", encoding="latin1")
+    df = pd.read_csv(
+        file_path,
+        sep=";",
+        encoding="latin1"
+    )
 
     df.columns = (
         df.columns
@@ -39,233 +61,379 @@ def load_data():
         .str.replace(" ", "_")
     )
 
-    df.rename(columns={"%ledxloca": "porcentaje_led"}, inplace=True)
+    df.rename(
+        columns={
+            "%ledxloca": "porcentaje_led"
+        },
+        inplace=True
+    )
 
-    df["porcentaje_led"] = df["porcentaje_led"].astype(str)
-    df["porcentaje_led"] = df["porcentaje_led"].str.replace("%", "")
-    df["porcentaje_led"] = df["porcentaje_led"].str.replace(",", ".")
-    df["porcentaje_led"] = pd.to_numeric(df["porcentaje_led"], errors="coerce")
+    # =========================
+    # CLEAN PERCENTAGE
+    # =========================
+
+    df["porcentaje_led"] = (
+        df["porcentaje_led"]
+        .astype(str)
+        .str.replace("%", "")
+        .str.replace(",", ".")
+    )
+
+    df["porcentaje_led"] = pd.to_numeric(
+        df["porcentaje_led"],
+        errors="coerce"
+    )
+
+    # =========================
+    # AVOID DIVISION BY ZERO
+    # =========================
 
     df["total"] = df["total"].replace(0, 1)
 
-    ratio = (df["mh"] + df["na"]) / df["total"]
+    # =========================
+    # CREATE RISK
+    # =========================
+
+    ratio = (
+        df["mh"] + df["na"]
+    ) / df["total"]
 
     def classify_risk(x):
+
         if x > 0.5:
             return "High"
+
         elif x > 0.2:
             return "Medium"
-        else:
-            return "Low"
+
+        return "Low"
 
     df["risk"] = ratio.apply(classify_risk)
 
-    features = ["porcentaje_led", "total"]
-    df = df.dropna(subset=features + ["risk"])
+    features = [
+        "porcentaje_led",
+        "total"
+    ]
+
+    df = df.dropna(
+        subset=features + ["risk"]
+    )
 
     return df, features
 
+# =========================
+# GRAPH HELPER
+# =========================
 
-# =========================
-# HELPER
-# =========================
 def fig_to_base64():
+
     buf = io.BytesIO()
-    plt.savefig(buf, format="png", bbox_inches="tight", dpi=120)
+
+    plt.savefig(
+        buf,
+        format="png",
+        bbox_inches="tight",
+        dpi=80
+    )
+
     buf.seek(0)
-    encoded = base64.b64encode(buf.getvalue()).decode()
+
+    encoded = base64.b64encode(
+        buf.getvalue()
+    ).decode()
+
     plt.close()
+
     return encoded
 
+# =========================
+# MAIN MODEL
+# =========================
 
-# =========================
-# MAIN FUNCTION
-# =========================
 def run_forest():
 
     df, features = load_data()
 
     X = df[features]
+
     y = df["risk"]
 
+    # =========================
+    # ENCODE
+    # =========================
+
     le = LabelEncoder()
+
     y_enc = le.fit_transform(y)
 
+    # =========================
+    # SPLIT
+    # =========================
+
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y_enc, test_size=0.2, random_state=42, stratify=y_enc
+        X,
+        y_enc,
+        test_size=0.2,
+        random_state=42,
+        stratify=y_enc
     )
+
+    # =========================
+    # SCALE
+    # =========================
 
     scaler = StandardScaler()
-    X_train_sc = scaler.fit_transform(X_train)
-    X_test_sc  = scaler.transform(X_test)
 
-    # modelo con OOB activado
+    X_train_sc = scaler.fit_transform(X_train)
+
+    X_test_sc = scaler.transform(X_test)
+
+    # =========================
+    # MODEL
+    # =========================
+
     model = RandomForestClassifier(
-        n_estimators=200,
+        n_estimators=100,
         random_state=42,
-        oob_score=True
+        oob_score=True,
+        n_jobs=-1
     )
+
     model.fit(X_train_sc, y_train)
 
-    y_pred  = model.predict(X_test_sc)
+    # =========================
+    # PREDICTIONS
+    # =========================
+
+    y_pred = model.predict(X_test_sc)
+
     y_proba = model.predict_proba(X_test_sc)
 
     # =========================
     # METRICS
     # =========================
-    accuracy  = round(accuracy_score(y_test, y_pred), 3)
-    precision = round(precision_score(y_test, y_pred, average="weighted", zero_division=0), 3)
-    recall    = round(recall_score(y_test, y_pred, average="weighted", zero_division=0), 3)
-    f1        = round(f1_score(y_test, y_pred, average="weighted", zero_division=0), 3)
-    oob       = round(model.oob_score_, 3)
+
+    accuracy = round(
+        accuracy_score(y_test, y_pred),
+        3
+    )
+
+    precision = round(
+        precision_score(
+            y_test,
+            y_pred,
+            average="weighted",
+            zero_division=0
+        ),
+        3
+    )
+
+    recall = round(
+        recall_score(
+            y_test,
+            y_pred,
+            average="weighted",
+            zero_division=0
+        ),
+        3
+    )
+
+    f1 = round(
+        f1_score(
+            y_test,
+            y_pred,
+            average="weighted",
+            zero_division=0
+        ),
+        3
+    )
+
+    oob = round(
+        model.oob_score_,
+        3
+    )
+
+    # =========================
+    # CROSS VALIDATION
+    # =========================
 
     pipeline = Pipeline([
         ("scaler", StandardScaler()),
-        ("model", RandomForestClassifier(n_estimators=200, random_state=42))
+        ("model", RandomForestClassifier(
+            n_estimators=100,
+            random_state=42
+        ))
     ])
-    cv = round(cross_val_score(pipeline, X, y_enc, cv=5, scoring="accuracy").mean(), 3)
+
+    cv = round(
+        cross_val_score(
+            pipeline,
+            X,
+            y_enc,
+            cv=3,
+            scoring="accuracy"
+        ).mean(),
+        3
+    )
 
     # =========================
-    # 1. CONFUSION MATRIX
+    # CONFUSION MATRIX
     # =========================
-    fig, ax = plt.subplots(figsize=(6, 5))
+
+    fig, ax = plt.subplots(figsize=(5, 4))
+
     ConfusionMatrixDisplay.from_predictions(
-        y_test, y_pred,
+        y_test,
+        y_pred,
         display_labels=le.classes_,
-        ax=ax, colorbar=False,
-        cmap="Greens"
+        ax=ax,
+        colorbar=False
     )
-    ax.set_title("Matriz de Confusión", fontsize=13, fontweight="bold")
+
+    ax.set_title("Confusion Matrix")
+
     confusion_graph = fig_to_base64()
 
     # =========================
-    # 2. FEATURE IMPORTANCE + ERROR BARS
-    #    (desviación estándar entre árboles — único de RF)
+    # FEATURE IMPORTANCE
     # =========================
-    fig, ax = plt.subplots(figsize=(7, 4))
 
-    importances = np.array([tree.feature_importances_ for tree in model.estimators_])
-    mean_imp = importances.mean(axis=0)
-    std_imp  = importances.std(axis=0)
-    sorted_idx = np.argsort(mean_imp)
+    fig, ax = plt.subplots(figsize=(5, 4))
+
+    importance = model.feature_importances_
 
     ax.barh(
-        [features[i] for i in sorted_idx],
-        mean_imp[sorted_idx],
-        xerr=std_imp[sorted_idx],
-        color="#27ae60", ecolor="#2c3e50",
-        capsize=5, alpha=0.85
+        features,
+        importance
     )
-    ax.set_title("Feature Importance ± Desviación entre Árboles", fontsize=12, fontweight="bold")
-    ax.set_xlabel("Importancia media")
+
+    ax.set_title("Feature Importance")
+
     feature_graph = fig_to_base64()
 
     # =========================
-    # 3. OOB ERROR vs N_ESTIMATORS
-    #    (cuántos árboles necesita realmente el modelo)
+    # PROBABILITY GRAPH
     # =========================
-    fig, ax = plt.subplots(figsize=(8, 4))
 
-    oob_errors = []
-    estimator_range = range(10, 210, 10)
+    fig, ax = plt.subplots(figsize=(6, 4))
 
-    for n in estimator_range:
-        rf = RandomForestClassifier(
-            n_estimators=n,
-            random_state=42,
-            oob_score=True
-        )
-        rf.fit(X_train_sc, y_train)
-        oob_errors.append(1 - rf.oob_score_)
+    for i, cls in enumerate(le.classes_):
 
-    ax.plot(estimator_range, oob_errors, color="#27ae60", linewidth=2, marker="o", markersize=4)
-    ax.set_title("OOB Error vs Número de Árboles", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Número de árboles")
-    ax.set_ylabel("OOB Error")
-    ax.grid(alpha=0.3)
-    ax.axhline(y=min(oob_errors), color="#e74c3c", linestyle="--", alpha=0.7, label=f"Mínimo: {round(min(oob_errors),3)}")
-    ax.legend()
-    oob_graph = fig_to_base64()
-
-    # =========================
-    # 4. PROBABILIDADES POR CLASE
-    #    (predict_proba promediado sobre todos los árboles)
-    # =========================
-    fig, ax = plt.subplots(figsize=(8, 4))
-    class_labels = le.classes_
-    colors_prob  = ["#e74c3c", "#f39c12", "#2ecc71"]
-
-    for i, (cls, color) in enumerate(zip(class_labels, colors_prob)):
         ax.hist(
-            y_proba[:, i], bins=15, alpha=0.6,
-            label=cls, color=color, edgecolor="white"
+            y_proba[:, i],
+            bins=10,
+            alpha=0.5,
+            label=cls
         )
-    ax.set_title("Distribución de Probabilidades por Clase", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Probabilidad predicha")
-    ax.set_ylabel("Frecuencia")
+
     ax.legend()
-    ax.grid(alpha=0.3)
+
+    ax.set_title(
+        "Prediction Probabilities"
+    )
+
     proba_graph = fig_to_base64()
 
     # =========================
-    # 5. DISTRIBUCIÓN DE RIESGO
+    # RISK DISTRIBUTION
     # =========================
-    fig, ax = plt.subplots(figsize=(6, 4))
-    counts = df["risk"].value_counts().reindex(["High", "Medium", "Low"])
-    bar_colors = ["#e74c3c", "#f39c12", "#2ecc71"]
-    counts.plot(kind="bar", ax=ax, color=bar_colors, edgecolor="white")
-    ax.set_title("Distribución de Riesgo en el Dataset", fontsize=13, fontweight="bold")
-    ax.set_xlabel("")
-    ax.set_ylabel("Cantidad")
-    plt.xticks(rotation=0)
-    for i, v in enumerate(counts):
-        ax.text(i, v + 1, str(v), ha="center", fontweight="bold")
+
+    fig, ax = plt.subplots(figsize=(5, 4))
+
+    counts = df["risk"].value_counts()
+
+    counts.plot(
+        kind="bar",
+        ax=ax
+    )
+
+    ax.set_title(
+        "Risk Distribution"
+    )
+
     risk_graph = fig_to_base64()
 
-    # insight
-    max_idx     = np.argmax(mean_imp)
-    top_feature = features[max_idx]
-    top_value   = round(mean_imp[max_idx], 3)
-    insight     = f"La variable más influyente es '{top_feature}' con importancia {top_value} (±{round(std_imp[max_idx],3)})"
+    # =========================
+    # INSIGHT
+    # =========================
+
+    top_idx = np.argmax(importance)
+
+    top_feature = features[top_idx]
+
+    top_value = round(
+        importance[top_idx],
+        3
+    )
+
+    insight = (
+        f"The most influential feature is "
+        f"'{top_feature}' "
+        f"with importance {top_value}"
+    )
+
+    # =========================
+    # RETURN
+    # =========================
 
     return {
-        "accuracy":        accuracy,
-        "precision":       precision,
-        "recall":          recall,
-        "f1":              f1,
-        "cv":              cv,
-        "oob":             oob,
+
+        "accuracy": accuracy,
+
+        "precision": precision,
+
+        "recall": recall,
+
+        "f1": f1,
+
+        "cv": cv,
+
+        "oob": oob,
+
         "confusion_graph": confusion_graph,
-        "feature_graph":   feature_graph,
-        "oob_graph":       oob_graph,
-        "proba_graph":     proba_graph,
-        "risk_graph":      risk_graph,
-        "top_feature":     top_feature,
-        "top_value":       top_value,
-        "insight":         insight
+
+        "feature_graph": feature_graph,
+
+        "proba_graph": proba_graph,
+
+        "risk_graph": risk_graph,
+
+        "insight": insight
     }
 
+# =========================
+# PREDICTION FUNCTION
+# =========================
 
-# =========================
-# PREDICTION
-# =========================
-def predict_forest(porcentaje_led, total):
+def predict_forest(
+    porcentaje_led,
+    total
+):
 
     df, features = load_data()
 
     X = df[features]
+
     y = df["risk"]
 
     le = LabelEncoder()
+
     y_enc = le.fit_transform(y)
 
     pipeline = Pipeline([
         ("scaler", StandardScaler()),
-        ("model", RandomForestClassifier(n_estimators=200, random_state=42))
+        ("model", RandomForestClassifier(
+            n_estimators=100,
+            random_state=42
+        ))
     ])
+
     pipeline.fit(X, y_enc)
 
-    sample = np.array([[porcentaje_led, total]])
+    sample = np.array([
+        [porcentaje_led, total]
+    ])
+
     pred = pipeline.predict(sample)
 
     return le.inverse_transform(pred)[0]
