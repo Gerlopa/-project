@@ -23,7 +23,7 @@ file_path = os.path.join(BASE_DIR, "data", "datos luz.csv")
 
 
 # =========================
-# PREPARAR DATOS
+# DATA PRARATION
 # =========================
 def load_data():
 
@@ -87,7 +87,7 @@ def run_clustering():
 
     # =========================
     # ELBOW + SILHOUETTE
-    # para encontrar el K óptimo
+    # to find the optimum K
     # =========================
     inertias    = []
     silhouettes = []
@@ -99,10 +99,10 @@ def run_clustering():
         inertias.append(km.inertia_)
         silhouettes.append(silhouette_score(X_sc, km.labels_))
 
-    # K óptimo = mejor silhouette
+    # optimum K = better silhouette
     best_k = list(k_range)[np.argmax(silhouettes)]
 
-    # modelo final
+    # final model
     model = KMeans(n_clusters=best_k, random_state=42, n_init=10)
     model.fit(X_sc)
     labels = model.labels_
@@ -112,7 +112,7 @@ def run_clustering():
     silhouette = round(silhouette_score(X_sc, labels), 3)
     inertia    = round(model.inertia_, 1)
 
-    # descripción de cada cluster
+    # Description of every cluster
     cluster_summary = []
     for c in range(best_k):
         sub = df[df["cluster"] == c]
@@ -151,7 +151,7 @@ def run_clustering():
     silhouette_graph = fig_to_base64()
 
     # =========================
-    # 3. CLUSTERS EN 2D (PCA)
+    # 3. CLUSTERS IN 2D (PCA)
     # =========================
     pca    = PCA(n_components=2)
     X_pca  = pca.fit_transform(X_sc)
@@ -168,7 +168,7 @@ def run_clustering():
             color=color, alpha=0.7, s=60, edgecolors="white"
         )
 
-    # centroides en PCA
+    # centroids in PCA
     centroids_pca = pca.transform(model.cluster_centers_)
     ax.scatter(
         centroids_pca[:, 0], centroids_pca[:, 1],
@@ -183,7 +183,7 @@ def run_clustering():
     pca_graph = fig_to_base64()
 
     # =========================
-    # 4. DISTRIBUCIÓN DE CLUSTERS
+    # 4. CLUSTERS DISTRIBUTION 
     # =========================
     fig, ax = plt.subplots(figsize=(6, 4))
     cluster_counts = pd.Series(labels).value_counts().sort_index()
@@ -198,7 +198,7 @@ def run_clustering():
     dist_graph = fig_to_base64()
 
     # =========================
-    # 5. DENDROGRAMA (jerárquico)
+    # 5. DENDROGRAM (hierarchical)
     # =========================
     fig, ax = plt.subplots(figsize=(10, 5))
     sample_idx = np.random.choice(len(X_sc), min(50, len(X_sc)), replace=False)
