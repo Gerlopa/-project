@@ -145,7 +145,7 @@ def run_xgboost():
         ax=ax, colorbar=False,
         cmap="Oranges"
     )
-    ax.set_title("Matriz de Confusión", fontsize=13, fontweight="bold")
+    ax.set_title("Confusion Matrix", fontsize=13, fontweight="bold")
     confusion_graph = fig_to_base64()
 
     # =========================
