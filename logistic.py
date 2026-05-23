@@ -26,7 +26,7 @@ file_path = os.path.join(BASE_DIR, "data", "datos luz.csv")
 
 
 # =========================
-# PREPARAR DATOS
+# DATA PREPARATION
 # =========================
 def load_data():
 
@@ -60,7 +60,7 @@ def load_data():
 
     df["risk"] = ratio.apply(classify_risk)
 
-    #  Sin mh ni na
+    #  Without mh 
     features = ["porcentaje_led", "total"]
     df = df.dropna(subset=features + ["risk"])
 
@@ -92,7 +92,7 @@ def run_logistic():
     le = LabelEncoder()
     y_enc = le.fit_transform(y)
 
-    # ✅ Split antes de escalar
+    # Split before climbing
     X_train, X_test, y_train, y_test = train_test_split(
         X, y_enc, test_size=0.2, random_state=42, stratify=y_enc
     )
@@ -115,7 +115,7 @@ def run_logistic():
     recall    = round(recall_score(y_test, y_pred, average="weighted", zero_division=0), 3)
     f1        = round(f1_score(y_test, y_pred, average="weighted", zero_division=0), 3)
 
-    # Pipeline para CV sin leakage
+    # Leak-free CV pipeline
     pipeline = Pipeline([
         ("scaler", StandardScaler()),
         ("model", LogisticRegression(max_iter=1000, random_state=42))
@@ -136,8 +136,8 @@ def run_logistic():
     confusion_graph = fig_to_base64()
 
     # =========================
-    # 2. COEFICIENTES (feature importance de LR)
-    #    — muestra signo: positivo aumenta riesgo, negativo lo reduce
+    # 2. COEFFICIENTS (feature importance of LE) 
+    # — shows sign: positive increases risk, negative reduces it
     # =========================
     fig, ax = plt.subplots(figsize=(8, 5))
     coef = model.coef_  # shape: (n_classes, n_features)
@@ -159,7 +159,7 @@ def run_logistic():
 
     # =========================
     # 3. CURVA SIGMOIDE
-    #    variando porcentaje_led con total en su media
+    #    varying percentage_led with total in its average
     # =========================
     fig, ax = plt.subplots(figsize=(8, 4))
 
@@ -198,7 +198,7 @@ def run_logistic():
     proba_graph = fig_to_base64()
 
     # =========================
-    # 5. DISTRIBUCIÓN DE RIESGO
+    # 5. RISK DISTRIBUTION
     # =========================
     fig, ax = plt.subplots(figsize=(6, 4))
     counts = df["risk"].value_counts().reindex(["High", "Medium", "Low"])
