@@ -3,12 +3,12 @@
 {% block content %}
 
 <div class="card">
-    <h1>🌲 Random Forest Results</h1>
+    <h1>Random Forest Results</h1>
     <p>Public lighting failure risk prediction</p>
 </div>
 
 <div class="card">
-    <h2>📋 Model Overview</h2>
+    <h2>Model Overview</h2>
     <ul>
         <li><strong>Problem description:</strong> Classify lighting risk using an ensemble of decision trees to improve robustness.</li>
         <li><strong>Type of Machine Learning:</strong> Supervised Learning (ensemble classification)</li>
@@ -19,7 +19,7 @@
 </div>
 
 <div class="card">
-    <h2>📊 Metrics</h2>
+    <h2>Metrics</h2>
     <p><strong>Accuracy:</strong> {{ datos.accuracy }}</p>
     <p><strong>Precision:</strong> {{ datos.precision }}</p>
     <p><strong>Recall:</strong> {{ datos.recall }}</p>
@@ -29,12 +29,12 @@
 </div>
 
 <div class="card">
-    <h2>🔥 Insight</h2>
+    <h2>Insight</h2>
     <p>{{ datos.insight }}</p>
 </div>
 
 <div class="card">
-    <h2>🔮 Prediction</h2>
+    <h2>Prediction</h2>
     <form method="POST" action="/predict_forest">
         <input type="number" step="0.1" name="porcentaje_led" placeholder="% LED" required>
         <input type="number" name="total" placeholder="Total" required>
@@ -43,37 +43,37 @@
 
     {% if prediction %}
         {% if prediction == "High" %}
-            <h3 style="color:#e74c3c;">⚠️ High Risk</h3>
+            <h3 style="color:#e74c3c;"> High Risk</h3>
         {% elif prediction == "Medium" %}
-            <h3 style="color:#f39c12;">⚡ Medium Risk</h3>
+            <h3 style="color:#f39c12;"> Medium Risk</h3>
         {% else %}
-            <h3 style="color:#2ecc71;">✅ Low Risk</h3>
+            <h3 style="color:#2ecc71;"> Low Risk</h3>
         {% endif %}
     {% endif %}
 </div>
 
 <div class="card">
-    <h2>📉 Confusion Matrix</h2>
+    <h2>Confusion Matrix</h2>
     <img src="data:image/png;base64,{{ datos.confusion_graph }}" style="max-width:100%;">
 </div>
 
 <div class="card">
-    <h2>⭐ Feature Importance ± Std Between Trees</h2>
+    <h2>Feature Importance ± Std Between Trees</h2>
     <img src="data:image/png;base64,{{ datos.feature_graph }}" style="max-width:100%;">
 </div>
 
 <div class="card">
-    <h2>🌳 OOB Error vs Number of Trees</h2>
+    <h2> OOB Error vs Number of Trees</h2>
     <img src="data:image/png;base64,{{ datos.oob_graph }}" style="max-width:100%;">
 </div>
 
 <div class="card">
-    <h2>🎯 Prediction Probabilities by Class</h2>
+    <h2> Prediction Probabilities by Class</h2>
     <img src="data:image/png;base64,{{ datos.proba_graph }}" style="max-width:100%;">
 </div>
 
 <div class="card">
-    <h2>📊 Risk Distribution</h2>
+    <h2> Risk Distribution</h2>
     <img src="data:image/png;base64,{{ datos.risk_graph }}" style="max-width:100%;">
 </div>
 
