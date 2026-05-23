@@ -191,9 +191,9 @@ def run_xgboost():
             y_proba[:, i], bins=15, alpha=0.6,
             label=cls, color=color, edgecolor="white"
         )
-    ax.set_title("Distribución de Probabilidades por Clase", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Probabilidad predicha")
-    ax.set_ylabel("Frecuencia")
+    ax.set_title("Probability Distribution by Class", fontsize=13, fontweight="bold")
+    ax.set_xlabel("Predicted probability")
+    ax.set_ylabel("Frequency")
     ax.legend()
     ax.grid(alpha=0.3)
     proba_graph = fig_to_base64()
@@ -215,7 +215,7 @@ def run_xgboost():
     max_idx     = np.argmax(importance)
     top_feature = features[max_idx]
     top_value   = round(importance[max_idx], 3)
-    insight     = f"La variable más influyente es '{top_feature}' con importancia {top_value}"
+    insight     = f"The most influential variable is '{top_feature}' significantly {top_value}"
 
     return {
         "accuracy":        accuracy,
