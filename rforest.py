@@ -290,7 +290,7 @@ def run_forest():
         colorbar=False
     )
 
-    ax.set_title("Confusion Matrix")
+    ax.set_title("Matrix Confusion")
 
     confusion_graph = fig_to_base64()
 
