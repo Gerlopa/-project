@@ -26,7 +26,7 @@ file_path = os.path.join(BASE_DIR, "data", "datos luz.csv")
 
 
 # =========================
-# PREPARAR DATOS
+# DATA PREPARATION
 # =========================
 def load_data():
 
@@ -60,7 +60,7 @@ def load_data():
 
     df["risk"] = ratio.apply(classify_risk)
 
-    # ✅ Sin mh ni na
+    # Without mh
     features = ["porcentaje_led", "total"]
     df = df.dropna(subset=features + ["risk"])
 
@@ -183,7 +183,7 @@ def run_xgboost():
     learning_graph = fig_to_base64()
 
     # =========================
-    # 4. PROBABILIDADES DE PREDICCIÓN
+    # 4. PREDICTION PROBABILITIES
     # =========================
     fig, ax = plt.subplots(figsize=(8, 4))
     for i, (cls, color) in enumerate(zip(le.classes_, ["#e74c3c", "#f39c12", "#2ecc71"])):
@@ -199,7 +199,7 @@ def run_xgboost():
     proba_graph = fig_to_base64()
 
     # =========================
-    # 5. DISTRIBUCIÓN DE RIESGO
+    # 5. RISK DISTRIBUTION
     # =========================
     fig, ax = plt.subplots(figsize=(6, 4))
     counts = df["risk"].value_counts().reindex(["High", "Medium", "Low"])
