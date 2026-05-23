@@ -60,7 +60,7 @@ def load_data():
 
     df["risk"] = ratio.apply(classify_risk)
 
-    # ✅ Sin mh ni na
+    #  Sin mh ni na
     features = ["porcentaje_led", "total"]
     df = df.dropna(subset=features + ["risk"])
 
@@ -115,7 +115,7 @@ def run_logistic():
     recall    = round(recall_score(y_test, y_pred, average="weighted", zero_division=0), 3)
     f1        = round(f1_score(y_test, y_pred, average="weighted", zero_division=0), 3)
 
-    # ✅ Pipeline para CV sin leakage
+    # Pipeline para CV sin leakage
     pipeline = Pipeline([
         ("scaler", StandardScaler()),
         ("model", LogisticRegression(max_iter=1000, random_state=42))
@@ -182,7 +182,7 @@ def run_logistic():
     logistic_graph = fig_to_base64()
 
     # =========================
-    # 4. PROBABILIDADES DE PREDICCIÓN
+    # 4. PREDICTION PROBABILITIES
     # =========================
     fig, ax = plt.subplots(figsize=(8, 4))
     for i, (cls, color) in enumerate(zip(le.classes_, ["#e74c3c", "#f39c12", "#2ecc71"])):
