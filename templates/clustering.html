@@ -3,12 +3,12 @@
 {% block content %}
 
 <div class="card">
-    <h1>🔵 K-Means Clustering</h1>
+    <h1>K-Means Clustering</h1>
     <p>Grouping localities by public lighting patterns</p>
 </div>
 
 <div class="card">
-    <h2>📋 Model Overview</h2>
+    <h2>Model Overview</h2>
     <ul>
         <li><strong>Problem description:</strong> Group localities by similar lighting patterns without predefined labels.</li>
         <li><strong>Type of Machine Learning:</strong> Unsupervised Learning (clustering)</li>
@@ -19,14 +19,14 @@
 </div>
 
 <div class="card">
-    <h2>📊 Metrics</h2>
+    <h2> Metrics</h2>
     <p><strong>Optimal K:</strong> {{ datos.best_k }} clusters</p>
     <p><strong>Silhouette Score:</strong> {{ datos.silhouette }}</p>
     <p><strong>Inertia:</strong> {{ datos.inertia }}</p>
 </div>
 
 <div class="card">
-    <h2>🔥 Insight</h2>
+    <h2>Insight</h2>
     <p>{{ datos.insight }}</p>
 </div>
 
@@ -57,7 +57,7 @@
 </div>
 
 <div class="card">
-    <h2>🔮 Cluster Prediction</h2>
+    <h2>Cluster Prediction</h2>
     <form method="POST" action="/predict_clustering">
         <input type="number" step="0.1" name="porcentaje_led" placeholder="% LED" required>
         <input type="number" name="total" placeholder="Total" required>
@@ -87,27 +87,27 @@
 </div>
 
 <div class="card">
-    <h2>📈 Elbow Method</h2>
+    <h2>Elbow Method</h2>
     <img src="data:image/png;base64,{{ datos.elbow_graph }}" style="max-width:100%;">
 </div>
 
 <div class="card">
-    <h2>💎 Silhouette Score by K</h2>
+    <h2>Silhouette Score by K</h2>
     <img src="data:image/png;base64,{{ datos.silhouette_graph }}" style="max-width:100%;">
 </div>
 
 <div class="card">
-    <h2>🗺️ Clusters in 2D (PCA)</h2>
+    <h2>Clusters in 2D (PCA)</h2>
     <img src="data:image/png;base64,{{ datos.pca_graph }}" style="max-width:100%;">
 </div>
 
 <div class="card">
-    <h2>📊 Records Distribution by Cluster</h2>
+    <h2>Records Distribution by Cluster</h2>
     <img src="data:image/png;base64,{{ datos.dist_graph }}" style="max-width:100%;">
 </div>
 
 <div class="card">
-    <h2>🌳 Hierarchical Dendrogram</h2>
+    <h2>Hierarchical Dendrogram</h2>
     <img src="data:image/png;base64,{{ datos.dendro_graph }}" style="max-width:100%;">
 </div>
 
