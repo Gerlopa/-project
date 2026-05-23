@@ -132,7 +132,7 @@ def run_logistic():
         ax=ax, colorbar=False,
         cmap="Blues"
     )
-    ax.set_title("Matriz de Confusión", fontsize=13, fontweight="bold")
+    ax.set_title("Confusion Matrix", fontsize=13, fontweight="bold")
     confusion_graph = fig_to_base64()
 
     # =========================
@@ -174,9 +174,9 @@ def run_logistic():
     for i, (cls, color) in enumerate(zip(le.classes_, colors_sig)):
         ax.plot(x_values, probs[:, i], label=cls, color=color, linewidth=2)
 
-    ax.set_title("Curva Sigmoide por Clase vs % LED", fontsize=13, fontweight="bold")
+    ax.set_title("Sigmoid Curve by Class vs % LED", fontsize=13, fontweight="bold")
     ax.set_xlabel("% LED")
-    ax.set_ylabel("Probabilidad")
+    ax.set_ylabel("Probability")
     ax.legend()
     ax.grid(alpha=0.3)
     logistic_graph = fig_to_base64()
@@ -190,9 +190,9 @@ def run_logistic():
             y_proba[:, i], bins=15, alpha=0.6,
             label=cls, color=color, edgecolor="white"
         )
-    ax.set_title("Distribución de Probabilidades por Clase", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Probabilidad predicha")
-    ax.set_ylabel("Frecuencia")
+    ax.set_title("Probability Distributions by Class", fontsize=13, fontweight="bold")
+    ax.set_xlabel("Predicted probability")
+    ax.set_ylabel("Frequency")
     ax.legend()
     ax.grid(alpha=0.3)
     proba_graph = fig_to_base64()
@@ -203,8 +203,8 @@ def run_logistic():
     fig, ax = plt.subplots(figsize=(6, 4))
     counts = df["risk"].value_counts().reindex(["High", "Medium", "Low"])
     counts.plot(kind="bar", ax=ax, color=["#e74c3c", "#f39c12", "#2ecc71"], edgecolor="white")
-    ax.set_title("Distribución de Riesgo en el Dataset", fontsize=13, fontweight="bold")
-    ax.set_ylabel("Cantidad")
+    ax.set_title("Risk Distribution in the Dataset", fontsize=13, fontweight="bold")
+    ax.set_ylabel("Quantity")
     plt.xticks(rotation=0)
     for i, v in enumerate(counts):
         ax.text(i, v + 1, str(v), ha="center", fontweight="bold")
@@ -215,7 +215,7 @@ def run_logistic():
     max_idx     = np.argmax(abs_coef)
     top_feature = features[max_idx]
     top_value   = round(abs_coef[max_idx], 3)
-    insight     = f"La variable más influyente es '{top_feature}' con coeficiente medio absoluto de {top_value}"
+    insight     = f"The most influential variable is '{top_feature}' with an average absolute coefficient of {top_value}"
 
     return {
         "accuracy":        accuracy,
