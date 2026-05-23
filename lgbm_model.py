@@ -26,7 +26,7 @@ file_path = os.path.join(BASE_DIR, "data", "datos luz.csv")
 
 
 # =========================
-# PREPARAR DATOS
+# DATA PREPARATION
 # =========================
 def load_data():
 
@@ -77,7 +77,7 @@ def load_data():
 
 
 # =========================
-# GRAFICAS
+# GRAPHICS
 # =========================
 def fig_to_base64():
     buf = io.BytesIO()
@@ -109,7 +109,7 @@ def run_light():
     X_train_sc = scaler.fit_transform(X_train)
     X_test_sc  = scaler.transform(X_test)
 
-    # entrenamiento con eval para learning curve
+    # training with EVAL for learning curve
     model = lgb.LGBMClassifier(
         n_estimators=200,
         learning_rate=0.05,
@@ -190,7 +190,7 @@ def run_light():
     learning_graph = fig_to_base64()
 
     # =========================
-    # 4. DISTRIBUCIÓN DE RIESGO
+    # 4. RISK DISTRIBUTION 
     # =========================
     fig, ax = plt.subplots(figsize=(6, 4))
     counts = df["risk"].value_counts().reindex(["High", "Medium", "Low"])
@@ -205,7 +205,7 @@ def run_light():
     risk_graph = fig_to_base64()
 
     # =========================
-    # 5. PROBABILIDADES DE PREDICCIÓN
+    # 5. PREDICTION PROBABILITIES
     # =========================
     fig, ax = plt.subplots(figsize=(8, 4))
     class_labels = le.classes_
