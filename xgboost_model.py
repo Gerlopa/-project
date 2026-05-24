@@ -9,45 +9,33 @@ import os
 import numpy as np
 
 from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import LabelEncoder, StandardScaler, label_binarize
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import (
     accuracy_score, precision_score,
     recall_score, f1_score,
-    ConfusionMatrixDisplay
+    ConfusionMatrixDisplay, roc_curve, auc
 )
 import xgboost as xgb
 
-# =========================
-# PATH
-# =========================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(BASE_DIR, "data", "datos luz.csv")
 
 
-# =========================
-# DATA PREPARATION
-# =========================
 def load_data():
-
     df = pd.read_csv(file_path, sep=";", encoding="latin1")
-
     df.columns = (
         df.columns
         .str.strip()
         .str.lower()
         .str.replace(" ", "_")
     )
-
     df.rename(columns={"%ledxloca": "porcentaje_led"}, inplace=True)
-
     df["porcentaje_led"] = df["porcentaje_led"].astype(str)
     df["porcentaje_led"] = df["porcentaje_led"].str.replace("%", "")
     df["porcentaje_led"] = df["porcentaje_led"].str.replace(",", ".")
     df["porcentaje_led"] = pd.to_numeric(df["porcentaje_led"], errors="coerce")
-
     df["total"] = df["total"].replace(0, 1)
-
     ratio = (df["mh"] + df["na"]) / df["total"]
 
     def classify_risk(x):
@@ -59,17 +47,11 @@ def load_data():
             return "Low"
 
     df["risk"] = ratio.apply(classify_risk)
-
-    # Without mh
     features = ["porcentaje_led", "total"]
     df = df.dropna(subset=features + ["risk"])
-
     return df, features
 
 
-# =========================
-# HELPER
-# =========================
 def fig_to_base64():
     buf = io.BytesIO()
     plt.savefig(buf, format="png", bbox_inches="tight", dpi=120)
@@ -79,11 +61,7 @@ def fig_to_base64():
     return encoded
 
 
-# =========================
-# MAIN FUNCTION
-# =========================
 def run_xgboost():
-
     df, features = load_data()
 
     X = df[features]
@@ -117,6 +95,9 @@ def run_xgboost():
     y_pred  = model.predict(X_test_sc)
     y_proba = model.predict_proba(X_test_sc)
 
+    X_all_sc   = scaler.transform(X)
+    y_all_pred = model.predict(X_all_sc)
+
     # =========================
     # METRICS
     # =========================
@@ -140,12 +121,12 @@ def run_xgboost():
     # =========================
     fig, ax = plt.subplots(figsize=(6, 5))
     ConfusionMatrixDisplay.from_predictions(
-        y_test, y_pred,
+        y_enc, y_all_pred,
         display_labels=le.classes_,
         ax=ax, colorbar=False,
         cmap="Oranges"
     )
-    ax.set_title("Confusion Matrix", fontsize=13, fontweight="bold")
+    ax.set_title("Confusion Matrix (n=1000)", fontsize=13, fontweight="bold")
     confusion_graph = fig_to_base64()
 
     # =========================
@@ -161,7 +142,7 @@ def run_xgboost():
         color=colors
     )
     ax.set_title("Feature Importance (XGBoost)", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Importancia")
+    ax.set_xlabel("Importance")
     feature_graph = fig_to_base64()
 
     # =========================
@@ -172,18 +153,38 @@ def run_xgboost():
     train_loss = results["validation_0"]["mlogloss"]
     test_loss  = results["validation_1"]["mlogloss"]
     epochs     = range(1, len(train_loss) + 1)
-
     ax.plot(epochs, train_loss, label="Train loss", color="#e67e22", linewidth=2)
     ax.plot(epochs, test_loss,  label="Test loss",  color="#c0392b", linewidth=2, linestyle="--")
     ax.set_title("Learning Curve", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Iteraciones")
+    ax.set_xlabel("Iterations")
     ax.set_ylabel("Log Loss")
     ax.legend()
     ax.grid(alpha=0.3)
     learning_graph = fig_to_base64()
 
     # =========================
-    # 4. PREDICTION PROBABILITIES
+    # 4. ROC CURVE ✅ NUEVO
+    # =========================
+    fig, ax = plt.subplots(figsize=(8, 6))
+    classes    = le.classes_
+    y_test_bin = label_binarize(y_test, classes=range(len(classes)))
+    colors_roc = ["#e74c3c", "#f39c12", "#2ecc71"]
+
+    for i, (cls, color) in enumerate(zip(classes, colors_roc)):
+        fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_proba[:, i])
+        roc_auc     = round(auc(fpr, tpr), 3)
+        ax.plot(fpr, tpr, color=color, linewidth=2, label=f"{cls} (AUC = {roc_auc})")
+
+    ax.plot([0, 1], [0, 1], "k--", linewidth=1, alpha=0.5, label="Random classifier")
+    ax.set_title("ROC Curve — One vs Rest", fontsize=13, fontweight="bold")
+    ax.set_xlabel("False Positive Rate")
+    ax.set_ylabel("True Positive Rate")
+    ax.legend()
+    ax.grid(alpha=0.3)
+    roc_graph = fig_to_base64()
+
+    # =========================
+    # 5. PREDICTION PROBABILITIES
     # =========================
     fig, ax = plt.subplots(figsize=(8, 4))
     for i, (cls, color) in enumerate(zip(le.classes_, ["#e74c3c", "#f39c12", "#2ecc71"])):
@@ -191,8 +192,8 @@ def run_xgboost():
             y_proba[:, i], bins=15, alpha=0.6,
             label=cls, color=color, edgecolor="white"
         )
-    ax.set_title("Probability Distribution by Class", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Predicted probability")
+    ax.set_title("Prediction Probability Distribution", fontsize=13, fontweight="bold")
+    ax.set_xlabel("Predicted Probability")
     ax.set_ylabel("Frequency")
     ax.legend()
     ax.grid(alpha=0.3)
@@ -204,18 +205,17 @@ def run_xgboost():
     fig, ax = plt.subplots(figsize=(6, 4))
     counts = df["risk"].value_counts().reindex(["High", "Medium", "Low"])
     counts.plot(kind="bar", ax=ax, color=["#e74c3c", "#f39c12", "#2ecc71"], edgecolor="white")
-    ax.set_title("Distribución de Riesgo en el Dataset", fontsize=13, fontweight="bold")
-    ax.set_ylabel("Cantidad")
+    ax.set_title("Risk Distribution in Dataset", fontsize=13, fontweight="bold")
+    ax.set_ylabel("Count")
     plt.xticks(rotation=0)
     for i, v in enumerate(counts):
         ax.text(i, v + 1, str(v), ha="center", fontweight="bold")
     risk_graph = fig_to_base64()
 
-    # insight
     max_idx     = np.argmax(importance)
     top_feature = features[max_idx]
     top_value   = round(importance[max_idx], 3)
-    insight     = f"The most influential variable is '{top_feature}' significantly {top_value}"
+    insight     = f"The most influential variable is '{top_feature}' with importance {top_value}"
 
     return {
         "accuracy":        accuracy,
@@ -226,6 +226,7 @@ def run_xgboost():
         "confusion_graph": confusion_graph,
         "feature_graph":   feature_graph,
         "learning_graph":  learning_graph,
+        "roc_graph":       roc_graph,
         "proba_graph":     proba_graph,
         "risk_graph":      risk_graph,
         "top_feature":     top_feature,
@@ -234,19 +235,12 @@ def run_xgboost():
     }
 
 
-# =========================
-# PREDICTION
-# =========================
 def predict_xgboost(porcentaje_led, total):
-
     df, features = load_data()
-
     X = df[features]
     y = df["risk"]
-
     le = LabelEncoder()
     y_enc = le.fit_transform(y)
-
     pipeline = Pipeline([
         ("scaler", StandardScaler()),
         ("model", xgb.XGBClassifier(
@@ -256,8 +250,6 @@ def predict_xgboost(porcentaje_led, total):
         ))
     ])
     pipeline.fit(X, y_enc)
-
     sample = np.array([[porcentaje_led, total]])
     pred   = pipeline.predict(sample)
-
     return le.inverse_transform(pred)[0]
