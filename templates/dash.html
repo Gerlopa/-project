@@ -1,0 +1,71 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="card">
+    <h1>Evaluation Dashboard</h1>
+    <p>Real metrics comparison across all classification models</p>
+</div>
+
+<div class="card">
+    <h2>Best Model: {{ datos.best_model }}</h2>
+    <p>Highest F1-Score: <strong>{{ datos.best_f1 }}</strong></p>
+</div>
+
+<div class="card">
+    <h2>Summary Table</h2>
+    <table style="width:100%; border-collapse:collapse;">
+        <thead>
+            <tr style="background:#1a3b4f; color:white;">
+                <th style="padding:8px;">Model</th>
+                <th style="padding:8px;">Accuracy</th>
+                <th style="padding:8px;">Precision</th>
+                <th style="padding:8px;">Recall</th>
+                <th style="padding:8px;">F1-Score</th>
+                <th style="padding:8px;">CV 5-Fold</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set max_acc = datos.metrics.accuracy | max %}
+            {% set max_f1  = datos.metrics.f1 | max %}
+            {% set max_cv  = datos.metrics.cv | max %}
+            {% for row in datos.table_rows %}
+            <tr style="text-align:center; border-bottom:1px solid #eee;">
+                <td style="padding:8px; font-weight:700;">{{ row.name }}</td>
+                <td style="padding:8px;">{{ row.accuracy }}</td>
+                <td style="padding:8px;">{{ row.precision }}</td>
+                <td style="padding:8px;">{{ row.recall }}</td>
+                <td style="padding:8px;">{{ row.f1 }}</td>
+                <td style="padding:8px;">{{ row.cv }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="card">
+    <h2>Accuracy Comparison</h2>
+    <img src="data:image/png;base64,{{ datos.accuracy_graph }}" style="max-width:100%;">
+</div>
+
+<div class="card">
+    <h2>Precision · Recall · F1-Score</h2>
+    <img src="data:image/png;base64,{{ datos.metrics_graph }}" style="max-width:100%;">
+</div>
+
+<div class="card">
+    <h2>Cross-Validation (5-Fold)</h2>
+    <img src="data:image/png;base64,{{ datos.cv_graph }}" style="max-width:100%;">
+</div>
+
+<div class="card">
+    <h2>Radar — All Metrics</h2>
+    <img src="data:image/png;base64,{{ datos.radar_graph }}" style="max-width:100%;">
+</div>
+
+<div class="card">
+    <h2>Metrics Heatmap</h2>
+    <img src="data:image/png;base64,{{ datos.heatmap_graph }}" style="max-width:100%;">
+</div>
+
+{% endblock %}
