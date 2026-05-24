@@ -9,43 +9,32 @@ import os
 import numpy as np
 
 from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import LabelEncoder, StandardScaler, label_binarize
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import (
     accuracy_score, precision_score,
     recall_score, f1_score,
-    ConfusionMatrixDisplay
+    ConfusionMatrixDisplay, roc_curve, auc
 )
 import lightgbm as lgb
 
-# =========================
-# PATH
-# =========================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(BASE_DIR, "data", "datos luz.csv")
 
 
-# =========================
-# DATA PREPARATION
-# =========================
 def load_data():
-
     df = pd.read_csv(file_path, sep=";", encoding="latin1")
-
     df.columns = (
         df.columns
         .str.strip()
         .str.lower()
         .str.replace(" ", "_")
     )
-
     df.rename(columns={"%ledxloca": "porcentaje_led"}, inplace=True)
-
     df["porcentaje_led"] = df["porcentaje_led"].astype(str)
     df["porcentaje_led"] = df["porcentaje_led"].str.replace("%", "")
     df["porcentaje_led"] = df["porcentaje_led"].str.replace(",", ".")
     df["porcentaje_led"] = pd.to_numeric(df["porcentaje_led"], errors="coerce")
-
     df["total"] = df["total"].replace(0, 1)
 
     mes_order = {
@@ -69,16 +58,11 @@ def load_data():
             return "Low"
 
     df["risk"] = ratio.apply(classify_risk)
-
     features = ["porcentaje_led", "total", "led", "mes_num", "localidad_enc"]
     df = df.dropna(subset=features + ["risk"])
-
     return df, features
 
 
-# =========================
-# GRAPHICS
-# =========================
 def fig_to_base64():
     buf = io.BytesIO()
     plt.savefig(buf, format="png", bbox_inches="tight", dpi=120)
@@ -88,11 +72,7 @@ def fig_to_base64():
     return encoded
 
 
-# =========================
-# MAIN FUNCTION
-# =========================
 def run_light():
-
     df, features = load_data()
 
     X = df[features]
@@ -109,7 +89,6 @@ def run_light():
     X_train_sc = scaler.fit_transform(X_train)
     X_test_sc  = scaler.transform(X_test)
 
-    # training with EVAL for learning curve
     model = lgb.LGBMClassifier(
         n_estimators=200,
         learning_rate=0.05,
@@ -123,8 +102,11 @@ def run_light():
         eval_metric="multi_logloss"
     )
 
-    y_pred      = model.predict(X_test_sc)
-    y_proba     = model.predict_proba(X_test_sc)
+    y_pred  = model.predict(X_test_sc)
+    y_proba = model.predict_proba(X_test_sc)
+
+    X_all_sc   = scaler.transform(X)
+    y_all_pred = model.predict(X_all_sc)
 
     # =========================
     # METRICS
@@ -148,12 +130,12 @@ def run_light():
     # =========================
     fig, ax = plt.subplots(figsize=(6, 5))
     ConfusionMatrixDisplay.from_predictions(
-        y_test, y_pred,
+        y_enc, y_all_pred,
         display_labels=le.classes_,
         ax=ax, colorbar=False,
         cmap="Blues"
     )
-    ax.set_title("Confusion Matrix", fontsize=13, fontweight="bold")
+    ax.set_title("Confusion Matrix (n=1000)", fontsize=13, fontweight="bold")
     confusion_graph = fig_to_base64()
 
     # =========================
@@ -169,64 +151,84 @@ def run_light():
         color=colors
     )
     ax.set_title("Feature Importance (Gain)", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Total profit")
+    ax.set_xlabel("Total Gain")
     feature_graph = fig_to_base64()
 
     # =========================
     # 3. LEARNING CURVE
     # =========================
     fig, ax = plt.subplots(figsize=(8, 4))
-    results = model.evals_result_
+    results    = model.evals_result_
     train_loss = results["training"]["multi_logloss"]
     test_loss  = results["valid_1"]["multi_logloss"]
-    epochs = range(1, len(train_loss) + 1)
+    epochs     = range(1, len(train_loss) + 1)
     ax.plot(epochs, train_loss, label="Train loss", color="#3498db", linewidth=2)
     ax.plot(epochs, test_loss,  label="Test loss",  color="#e74c3c", linewidth=2, linestyle="--")
     ax.set_title("Learning Curve", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Iteraciones")
+    ax.set_xlabel("Iterations")
     ax.set_ylabel("Log Loss")
     ax.legend()
     ax.grid(alpha=0.3)
     learning_graph = fig_to_base64()
 
     # =========================
-    # 4. RISK DISTRIBUTION 
+    # 4. ROC CURVE ✅ NUEVO
+    # =========================
+    fig, ax = plt.subplots(figsize=(8, 6))
+    classes    = le.classes_
+    y_test_bin = label_binarize(y_test, classes=range(len(classes)))
+    colors_roc = ["#e74c3c", "#f39c12", "#2ecc71"]
+
+    for i, (cls, color) in enumerate(zip(classes, colors_roc)):
+        fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_proba[:, i])
+        roc_auc     = round(auc(fpr, tpr), 3)
+        ax.plot(fpr, tpr, color=color, linewidth=2, label=f"{cls} (AUC = {roc_auc})")
+
+    ax.plot([0, 1], [0, 1], "k--", linewidth=1, alpha=0.5, label="Random classifier")
+    ax.set_title("ROC Curve — One vs Rest", fontsize=13, fontweight="bold")
+    ax.set_xlabel("False Positive Rate")
+    ax.set_ylabel("True Positive Rate")
+    ax.legend()
+    ax.grid(alpha=0.3)
+    roc_graph = fig_to_base64()
+
+    # =========================
+    # 5. RISK DISTRIBUTION
     # =========================
     fig, ax = plt.subplots(figsize=(6, 4))
     counts = df["risk"].value_counts().reindex(["High", "Medium", "Low"])
     bar_colors = ["#e74c3c", "#f39c12", "#2ecc71"]
     counts.plot(kind="bar", ax=ax, color=bar_colors, edgecolor="white")
-    ax.set_title("Risk Distribution", fontsize=13, fontweight="bold")
+    ax.set_title("Risk Distribution in Dataset", fontsize=13, fontweight="bold")
     ax.set_xlabel("")
-    ax.set_ylabel("Quantity")
+    ax.set_ylabel("Count")
     plt.xticks(rotation=0)
     for i, v in enumerate(counts):
         ax.text(i, v + 1, str(v), ha="center", fontweight="bold")
     risk_graph = fig_to_base64()
 
     # =========================
-    # 5. PREDICTION PROBABILITIES
+    # 6. PREDICTION PROBABILITIES
     # =========================
     fig, ax = plt.subplots(figsize=(8, 4))
     class_labels = le.classes_
-    colors_prob = ["#e74c3c", "#f39c12", "#2ecc71"]
+    colors_prob  = ["#e74c3c", "#f39c12", "#2ecc71"]
     for i, (cls, color) in enumerate(zip(class_labels, colors_prob)):
         ax.hist(
             y_proba[:, i], bins=15, alpha=0.6,
             label=cls, color=color, edgecolor="white"
         )
-    ax.set_title("Probability Distribution by Class", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Predicted probability")
+    ax.set_title("Prediction Probability Distribution", fontsize=13, fontweight="bold")
+    ax.set_xlabel("Predicted Probability")
     ax.set_ylabel("Frequency")
     ax.legend()
     ax.grid(alpha=0.3)
     proba_graph = fig_to_base64()
 
-    # insight
     max_idx     = np.argmax(importance_gain)
     top_feature = features[max_idx]
     top_value   = round(importance_gain[max_idx], 1)
-    insight     = f"The most influential variable is '{top_feature}' with a profit of {top_value}"
+    insight     = f"The most influential variable is '{top_feature}' with a gain of {top_value}"
 
     return {
         "accuracy":        accuracy,
@@ -237,6 +239,7 @@ def run_light():
         "confusion_graph": confusion_graph,
         "feature_graph":   feature_graph,
         "learning_graph":  learning_graph,
+        "roc_graph":       roc_graph,
         "risk_graph":      risk_graph,
         "proba_graph":     proba_graph,
         "top_feature":     top_feature,
@@ -245,33 +248,12 @@ def run_light():
     }
 
 
-# =========================
-# PREDICTION
-# =========================
-def predict_light(porcentaje_led, total, led, mes, localidad):
-
+def predict_light(porcentaje_led, total):
     df, features = load_data()
-
     X = df[features]
     y = df["risk"]
-
     le = LabelEncoder()
     y_enc = le.fit_transform(y)
-
-    mes_order = {
-        "enero": 1, "febrero": 2, "marzo": 3, "abril": 4,
-        "mayo": 5, "junio": 6, "julio": 7, "agosto": 8,
-        "septiembre": 9, "octubre": 10, "noviembre": 11, "diciembre": 12
-    }
-    mes_num = mes_order.get(mes.lower(), 1)
-
-    le_loc = LabelEncoder()
-    le_loc.fit(df["localidad"].astype(str))
-    try:
-        localidad_enc = le_loc.transform([localidad])[0]
-    except ValueError:
-        localidad_enc = 0
-
     pipeline = Pipeline([
         ("scaler", StandardScaler()),
         ("model", lgb.LGBMClassifier(
@@ -280,8 +262,6 @@ def predict_light(porcentaje_led, total, led, mes, localidad):
         ))
     ])
     pipeline.fit(X, y_enc)
-
-    sample = np.array([[porcentaje_led, total, led, mes_num, localidad_enc]])
-    pred = pipeline.predict(sample)
-
+    sample = np.array([[porcentaje_led, total]])
+    pred   = pipeline.predict(sample)
     return le.inverse_transform(pred)[0]
