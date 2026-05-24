@@ -19,11 +19,12 @@ Monthly public lighting records of Bogotá (2023), including:
 
   
 models used
--XGBoost
--Logistic Regression
--Random Forest
--LightGBM
--K-Means Clustering
+- XGBoost
+- Logistic Regression
+- Random Forest
+- LightGBM
+- K-Means Clustering
+  
 
 by:
 Michelle Dallane Pedraza Gonzalez,
