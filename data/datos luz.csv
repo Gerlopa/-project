@@ -1,221 +1,1001 @@
-LOCALIDAD;LED;Mh;Na;TOTAL;%ledxloca;mes
-Antonio Nariño;5246;492;9;5747;91,28%;enero
-Barrios Unidos;2425;8692;782;11899;20,38%;enero
-Bosa;20798;1423;266;22487;92,49%;enero
-Chapinero;4571;8123;731;13425;34,05%;enero
-Ciudad Bolívar;24420;2259;455;27134;90,00%;enero
-Engativá;28520;6415;1065;36000;79,22%;enero
-Fontibón;12397;4430;909;17736;69,90%;enero
-Kennedy;35819;3197;1046;40062;89,41%;enero
-La Candelaria;555;1835;117;2507;22,14%;enero
-Los Mártires;2073;4960;221;7254;28,58%;enero
-Puente Aranda;15894;2071;1022;18987;83,71%;enero
-Rafael Uribe;15643;824;80;16547;94,54%;enero
-San Cristóbal;16985;1337;60;18382;92,40%;enero
-Santa Fe;2654;5446;714;8814;30,11%;enero
-Suba;7399;33976;905;42280;17,50%;enero
-Sumapaz;92;202;0;294;31,29%;enero
-Teusaquillo;5308;8184;1032;14524;36,55%;enero
-Tunjuelito;1229;5715;126;7070;17,38%;enero
-Usaquén;19453;3879;2295;25627;75,91%;enero
-Usme;15132;1672;466;17270;87,62%;enero
-Antonio Nariño;5278;491;3;5772;91,44%;febrero
-Barrios Unidos;2643;8623;630;11896;22,22%;febrero
-Bosa;20980;1322;183;22485;93,31%;febrero
-Chapinero;4595;8103;723;13421;34,24%;febrero
-Ciudad Bolívar;24743;2122;249;27114;91,26%;febrero
-Engativá;28676;6371;964;36011;79,63%;febrero
-Fontibón;12705;4292;741;17738;71,63%;febrero
-Kennedy;36205;3012;816;40033;90,44%;febrero
-La Candelaria;568;1832;107;2507;22,66%;febrero
-Los Mártires;2086;4945;220;7251;28,77%;febrero
-Puente Aranda;16003;2033;947;18983;84,30%;febrero
-Rafael Uribe;15678;822;46;16546;94,75%;febrero
-San Cristóbal;17014;1313;32;18359;92,67%;febrero
-Santa Fe;2694;5442;687;8823;30,53%;febrero
-Suba;7999;33657;619;42275;18,92%;febrero
-Sumapaz;95;202;0;297;31,99%;febrero
-Teusaquillo;5432;8090;992;14514;37,43%;febrero
-Tunjuelito;1330;5681;85;7096;18,74%;febrero
-Usaquén;19866;3736;2040;25642;77,47%;febrero
-Usme;15222;1665;398;17285;88,06%;febrero
-Antonio Nariño;5281;489;3;5773;91,48%;marzo
-Barrios Unidos;2722;8566;607;11895;22,88%;marzo
-Bosa;21001;1308;167;22476;93,44%;marzo
-Chapinero;4606;8102;721;13429;34,30%;marzo
-Ciudad Bolívar;24785;2103;208;27096;91,47%;marzo
-Engativá;29381;6048;551;35980;81,66%;marzo
-Fontibón;13063;4122;618;17803;73,38%;marzo
-Kennedy;36386;2980;659;40025;90,91%;marzo
-La Candelaria;569;1832;105;2506;22,71%;marzo
-Los Mártires;2166;4904;180;7250;29,88%;marzo
-Puente Aranda;16129;2018;835;18982;84,97%;marzo
-Rafael Uribe;15685;813;24;16522;94,93%;marzo
-San Cristóbal;17083;1265;12;18360;93,04%;marzo
-Santa Fe;2708;5432;682;8822;30,70%;marzo
-Suba;8078;33597;588;42263;19,11%;marzo
-Sumapaz;97;202;0;299;32,44%;marzo
-Teusaquillo;5571;8063;923;14557;38,27%;marzo
-Tunjuelito;1357;5654;81;7092;19,13%;marzo
-Usaquén;20020;3724;1919;25663;78,01%;marzo
-Usme;15379;1593;288;17260;89,10%;marzo
-Antonio Nariño;5287;488;3;5778;91,50%;abril
-Barrios Unidos;3136;8316;441;11893;26,37%;abril
-Bosa;20985;1308;163;22456;93,45%;abril
-Chapinero;4707;8078;652;13437;35,03%;abril
-Ciudad Bolívar;24898;2099;137;27134;91,76%;abril
-Engativá;29774;5906;303;35983;82,74%;abril
-Fontibón;13134;4104;540;17778;73,88%;abril
-Kennedy;36421;2976;628;40025;91,00%;abril
-La Candelaria;575;1829;99;2503;22,97%;abril
-Los Mártires;2178;4900;173;7251;30,04%;abril
-Puente Aranda;16177;1999;791;18967;85,29%;abril
-Rafael Uribe;15735;812;11;16558;95,03%;abril
-San Cristóbal;17105;1234;1;18340;93,27%;abril
-Santa Fe;2964;5396;461;8821;33,60%;abril
-Suba;8209;33529;560;42298;19,41%;abril
-Sumapaz;97;202;0;299;32,44%;abril
-Teusaquillo;5733;8042;653;14428;39,74%;abril
-Tunjuelito;1491;5555;34;7080;21,06%;abril
-Usaquén;20920;3448;1306;25674;81,48%;abril
-Usme;15676;1566;127;17369;90,25%;abril
-Antonio Nariño;5300;487;1;5788;91,57%;mayo
-Barrios Unidos;3161;8312;420;11893;26,58%;mayo
-Bosa;21048;1291;155;22494;93,57%;mayo
-Chapinero;4729;8077;641;13447;35,17%;mayo
-Ciudad Bolívar;24938;2091;69;27098;92,03%;mayo
-Engativá;29790;5904;271;35965;82,83%;mayo
-Fontibón;13148;4102;505;17755;74,05%;mayo
-Kennedy;36500;2924;597;40021;91,20%;mayo
-La Candelaria;575;1829;99;2503;22,97%;mayo
-Los Mártires;2201;4891;163;7255;30,34%;mayo
-Puente Aranda;16272;1971;738;18981;85,73%;mayo
-Rafael Uribe;15740;812;11;16563;95,03%;mayo
-San Cristóbal;17107;1234;1;18342;93,27%;mayo
-Santa Fe;2979;5396;452;8827;33,75%;mayo
-Suba;8214;33522;557;42293;19,42%;mayo
-Sumapaz;97;202;0;299;32,44%;mayo
-Teusaquillo;5748;8040;624;14412;39,88%;mayo
-Tunjuelito;1525;5543;20;7088;21,52%;mayo
-Usaquén;21353;3119;1218;25690;83,12%;mayo
-Usme;15677;1566;127;17370;90,25%;mayo
-Antonio Nariño;5300;487;0;5787;91,58%;junio
-Barrios Unidos;3178;8306;418;11902;26,70%;junio
-Bosa;21027;1265;148;22440;93,70%;junio
-Chapinero;4736;8071;641;13448;35,22%;junio
-Ciudad Bolívar;24997;2085;67;27149;92,07%;junio
-Engativá;29805;5891;268;35964;82,87%;junio
-Fontibón;13207;4100;500;17807;74,17%;junio
-Kennedy;36538;2894;593;40025;91,29%;junio
-La Candelaria;577;1829;98;2504;23,04%;junio
-Los Mártires;2208;4888;157;7253;30,44%;junio
-Puente Aranda;16300;1967;734;19001;85,78%;junio
-Rafael Uribe;15741;781;10;16532;95,22%;junio
-San Cristóbal;17109;1232;1;18342;93,28%;junio
-Santa Fe;2982;5393;452;8827;33,78%;junio
-Suba;8260;33477;549;42286;19,53%;junio
-Sumapaz;97;202;0;299;32,44%;junio
-Teusaquillo;5780;8039;608;14427;40,06%;junio
-Tunjuelito;1536;5543;19;7098;21,64%;junio
-Usaquén;21381;3113;1215;25709;83,17%;junio
-Usme;15692;1562;124;17378;90,30%;junio
-Antonio Nariño;5313;487;0;5800;91,60%;julio
-Barrios Unidos;3178;8301;413;11892;26,72%;julio
-Bosa;21036;1264;147;22447;93,71%;julio
-Chapinero;4736;8055;640;13431;35,26%;julio
-Ciudad Bolívar;25015;2085;66;27166;92,08%;julio
-Engativá;29819;5887;266;35972;82,90%;julio
-Fontibón;13209;4097;490;17796;74,22%;julio
-Kennedy;36651;2865;592;40108;91,38%;julio
-La Candelaria;577;1829;98;2504;23,04%;julio
-Los Mártires;2208;4887;157;7252;30,45%;julio
-Puente Aranda;16305;1967;733;19005;85,79%;julio
-Rafael Uribe;15768;776;10;16554;95,25%;julio
-San Cristóbal;17150;1232;1;18383;93,29%;julio
-Santa Fe;2989;5393;440;8822;33,88%;julio
-Suba;8269;33438;522;42229;19,58%;julio
-Sumapaz;97;202;0;299;32,44%;julio
-Teusaquillo;5803;8028;596;14427;40,22%;julio
-Tunjuelito;1547;5534;20;7101;21,79%;julio
-Usaquén;21385;3108;1202;25695;83,23%;julio
-Usme;15696;1562;123;17381;90,31%;julio
-Antonio Nariño;5313;487;0;5800;91,60%;agosto
-Barrios Unidos;3185;8295;371;11851;26,88%;agosto
-Bosa;21032;1239;138;22409;93,86%;agosto
-Chapinero;4750;8051;618;13419;35,40%;agosto
-Ciudad Bolívar;25095;2083;36;27214;92,21%;agosto
-Engativá;29855;5882;241;35978;82,98%;agosto
-Fontibón;13257;4083;487;17827;74,36%;agosto
-Kennedy;36747;2854;592;40193;91,43%;agosto
-La Candelaria;577;1829;93;2499;23,09%;agosto
-Los Mártires;2208;4886;130;7224;30,56%;agosto
-Puente Aranda;16304;1965;718;18987;85,87%;agosto
-Rafael Uribe;15770;776;8;16554;95,26%;agosto
-San Cristóbal;17165;1232;1;18398;93,30%;agosto
-Santa Fe;2992;5393;435;8820;33,92%;agosto
-Suba;8297;33416;459;42172;19,67%;agosto
-Sumapaz;97;202;0;299;32,44%;agosto
-Teusaquillo;5819;8027;563;14409;40,38%;agosto
-Tunjuelito;1579;5534;20;7133;22,14%;agosto
-Usaquén;21480;3083;1151;25714;83,53%;agosto
-Usme;15723;1548;123;17394;90,39%;agosto
-Antonio Nariño;5313;487;0;5800;91,60%;septiembre
-Barrios Unidos;3181;8296;347;11824;26,90%;septiembre
-Bosa;21036;1238;138;22412;93,86%;septiembre
-Chapinero;4751;8036;607;13394;35,47%;septiembre
-Ciudad Bolívar;25098;2091;27;27216;92,22%;septiembre
-Engativá;29875;5873;220;35968;83,06%;septiembre
-Fontibón;13309;4111;466;17886;74,41%;septiembre
-Kennedy;36752;2854;550;40156;91,52%;septiembre
-La Candelaria;577;1829;82;2488;23,19%;septiembre
-Los Mártires;2207;4885;75;7167;30,79%;septiembre
-Puente Aranda;16305;1966;666;18937;86,10%;septiembre
-Rafael Uribe;15778;776;8;16562;95,27%;septiembre
-San Cristóbal;17185;1231;1;18417;93,31%;septiembre
-Santa Fe;3004;5393;410;8807;34,11%;septiembre
-Suba;8363;33408;459;42230;19,80%;septiembre
-Sumapaz;99;202;0;301;32,89%;septiembre
-Teusaquillo;5819;7933;500;14252;40,83%;septiembre
-Tunjuelito;1580;5534;20;7134;22,15%;septiembre
-Usaquén;21488;3084;1151;25723;83,54%;septiembre
-Usme;15747;1546;86;17379;90,61%;septiembre
-Antonio Nariño;5313;487;0;5800;91,60%;octubre
-Barrios Unidos;3190;8296;316;11802;27,03%;octubre
-Bosa;20964;1236;119;22319;93,93%;octubre
-Chapinero;4751;8036;520;13307;35,70%;octubre
-Ciudad Bolívar;25121;2091;27;27239;92,22%;octubre
-Engativá;29909;5872;215;35996;83,09%;octubre
-Fontibón;13313;4108;457;17878;74,47%;octubre
-Kennedy;36758;2859;525;40142;91,57%;octubre
-La Candelaria;577;1829;82;2488;23,19%;octubre
-Los Mártires;2224;4885;75;7184;30,96%;octubre
-Puente Aranda;16323;1973;665;18961;86,09%;octubre
-Rafael Uribe;15778;776;8;16562;95,27%;octubre
-San Cristóbal;17201;1231;1;18433;93,32%;octubre
-Santa Fe;3006;5393;401;8800;34,16%;octubre
-Suba;8434;33408;446;42288;19,94%;octubre
-Sumapaz;99;202;0;301;32,89%;octubre
-Teusaquillo;5823;7933;475;14231;40,92%;octubre
-Tunjuelito;1583;5533;17;7133;22,19%;octubre
-Usaquén;21545;3084;1079;25708;83,81%;octubre
-Usme;15784;1549;82;17415;90,63%;octubre
-Antonio Nariño;5315;487;0;5802;91,61%;noviembre
-Barrios Unidos;3192;8299;312;11803;27,04%;noviembre
-Bosa;20979;1230;118;22327;93,96%;noviembre
-Chapinero;4766;8035;512;13313;35,80%;noviembre
-Ciudad Bolívar;25140;2089;19;27248;92,26%;noviembre
-Engativá;29921;5863;215;35999;83,12%;noviembre
-Fontibón;13323;4102;455;17880;74,51%;noviembre
-Kennedy;36857;2844;503;40204;91,67%;noviembre
-La Candelaria;578;1829;82;2489;23,22%;noviembre
-Los Mártires;2223;4885;54;7162;31,04%;noviembre
-Puente Aranda;16334;1973;669;18976;86,08%;noviembre
-Rafael Uribe;15764;775;2;16541;95,30%;noviembre
-San Cristóbal;17225;1226;1;18452;93,35%;noviembre
-Santa Fe;3160;5389;243;8792;35,94%;noviembre
-Suba;8566;33366;383;42315;20,24%;noviembre
-Sumapaz;99;202;0;301;32,89%;noviembre
-Teusaquillo;5828;7931;463;14222;40,98%;noviembre
-Tunjuelito;1585;5533;16;7134;22,22%;noviembre
-Usaquén;21594;3083;1052;25729;83,93%;noviembre
-Usme;15860;1547;67;17474;90,76%;noviembre
+LOCALIDAD;LED;Mh;Na;TOTAL;%ledxloca;mes;
+Antonio Narino;5246;492;9;5747;91,28%;enero;
+Barrios Unidos;2425;8692;782;11899;20,38%;enero;
+Bosa;20798;1423;266;22487;92,49%;enero;
+Chapinero;4571;8123;731;13425;34,05%;enero;
+Ciudad Bolivar;24420;2259;455;27134;90,00%;enero;
+Engativa;28520;6415;1065;36000;79,22%;enero;
+Fontibon;12397;4430;909;17736;69,90%;enero;
+Kennedy;35819;3197;1046;40062;89,41%;enero;
+La Candelaria;555;1835;117;2507;22,14%;enero;
+Los Martires;2073;4960;221;7254;28,58%;enero;
+Puente Aranda;15894;2071;1022;18987;83,71%;enero;
+Rafael Uribe;15643;824;80;16547;94,54%;enero;
+San Cristobal;16985;1337;60;18382;92,40%;enero;
+Santa Fe;2654;5446;714;8814;30,11%;enero;
+Suba;7399;33976;905;42280;17,50%;enero;
+Sumapaz;92;202;0;294;31,29%;enero;
+Teusaquillo;5308;8184;1032;14524;36,55%;enero;
+Tunjuelito;1229;5715;126;7070;17,38%;enero;
+Usaquen;19453;3879;2295;25627;75,91%;enero;
+Usme;15132;1672;466;17270;87,62%;enero;
+Antonio Narino;5278;491;3;5772;91,44%;febrero;
+Barrios Unidos;2643;8623;630;11896;22,22%;febrero;
+Bosa;20980;1322;183;22485;93,31%;febrero;
+Chapinero;4595;8103;723;13421;34,24%;febrero;
+Ciudad Bolivar;24743;2122;249;27114;91,26%;febrero;
+Engativa;28676;6371;964;36011;79,63%;febrero;
+Fontibon;12705;4292;741;17738;71,63%;febrero;
+Kennedy;36205;3012;816;40033;90,44%;febrero;
+La Candelaria;568;1832;107;2507;22,66%;febrero;
+Los Martires;2086;4945;220;7251;28,77%;febrero;
+Puente Aranda;16003;2033;947;18983;84,30%;febrero;
+Rafael Uribe;15678;822;46;16546;94,75%;febrero;
+San Cristobal;17014;1313;32;18359;92,67%;febrero;
+Santa Fe;2694;5442;687;8823;30,53%;febrero;
+Suba;7999;33657;619;42275;18,92%;febrero;
+Sumapaz;95;202;0;297;31,99%;febrero;
+Teusaquillo;5432;8090;992;14514;37,43%;febrero;
+Tunjuelito;1330;5681;85;7096;18,74%;febrero;
+Usaquen;19866;3736;2040;25642;77,47%;febrero;
+Usme;15222;1665;398;17285;88,06%;febrero;
+Antonio Narino;5281;489;3;5773;91,48%;marzo;
+Barrios Unidos;2722;8566;607;11895;22,88%;marzo;
+Bosa;21001;1308;167;22476;93,44%;marzo;
+Chapinero;4606;8102;721;13429;34,30%;marzo;
+Ciudad Bolivar;24785;2103;208;27096;91,47%;marzo;
+Engativa;29381;6048;551;35980;81,66%;marzo;
+Fontibon;13063;4122;618;17803;73,38%;marzo;
+Kennedy;36386;2980;659;40025;90,91%;marzo;
+La Candelaria;569;1832;105;2506;22,71%;marzo;
+Los Martires;2166;4904;180;7250;29,88%;marzo;
+Puente Aranda;16129;2018;835;18982;84,97%;marzo;
+Rafael Uribe;15685;813;24;16522;94,93%;marzo;
+San Cristobal;17083;1265;12;18360;93,04%;marzo;
+Santa Fe;2708;5432;682;8822;30,70%;marzo;
+Suba;8078;33597;588;42263;19,11%;marzo;
+Sumapaz;97;202;0;299;32,44%;marzo;
+Teusaquillo;5571;8063;923;14557;38,27%;marzo;
+Tunjuelito;1357;5654;81;7092;19,13%;marzo;
+Usaquen;20020;3724;1919;25663;78,01%;marzo;
+Usme;15379;1593;288;17260;89,10%;marzo;
+Antonio Narino;5287;488;3;5778;91,50%;abril;
+Barrios Unidos;3136;8316;441;11893;26,37%;abril;
+Bosa;20985;1308;163;22456;93,45%;abril;
+Chapinero;4707;8078;652;13437;35,03%;abril;
+Ciudad Bolivar;24898;2099;137;27134;91,76%;abril;
+Engativa;29774;5906;303;35983;82,74%;abril;
+Fontibon;13134;4104;540;17778;73,88%;abril;
+Kennedy;36421;2976;628;40025;91,00%;abril;
+La Candelaria;575;1829;99;2503;22,97%;abril;
+Los Martires;2178;4900;173;7251;30,04%;abril;
+Puente Aranda;16177;1999;791;18967;85,29%;abril;
+Rafael Uribe;15735;812;11;16558;95,03%;abril;
+San Cristobal;17105;1234;1;18340;93,27%;abril;
+Santa Fe;2964;5396;461;8821;33,60%;abril;
+Suba;8209;33529;560;42298;19,41%;abril;
+Sumapaz;97;202;0;299;32,44%;abril;
+Teusaquillo;5733;8042;653;14428;39,74%;abril;
+Tunjuelito;1491;5555;34;7080;21,06%;abril;
+Usaquen;20920;3448;1306;25674;81,48%;abril;
+Usme;15676;1566;127;17369;90,25%;abril;
+Antonio Narino;5300;487;1;5788;91,57%;mayo;
+Barrios Unidos;3161;8312;420;11893;26,58%;mayo;
+Bosa;21048;1291;155;22494;93,57%;mayo;
+Chapinero;4729;8077;641;13447;35,17%;mayo;
+Ciudad Bolivar;24938;2091;69;27098;92,03%;mayo;
+Engativa;29790;5904;271;35965;82,83%;mayo;
+Fontibon;13148;4102;505;17755;74,05%;mayo;
+Kennedy;36500;2924;597;40021;91,20%;mayo;
+La Candelaria;575;1829;99;2503;22,97%;mayo;
+Los Martires;2201;4891;163;7255;30,34%;mayo;
+Puente Aranda;16272;1971;738;18981;85,73%;mayo;
+Rafael Uribe;15740;812;11;16563;95,03%;mayo;
+San Cristobal;17107;1234;1;18342;93,27%;mayo;
+Santa Fe;2979;5396;452;8827;33,75%;mayo;
+Suba;8214;33522;557;42293;19,42%;mayo;
+Sumapaz;97;202;0;299;32,44%;mayo;
+Teusaquillo;5748;8040;624;14412;39,88%;mayo;
+Tunjuelito;1525;5543;20;7088;21,52%;mayo;
+Usaquen;21353;3119;1218;25690;83,12%;mayo;
+Usme;15677;1566;127;17370;90,25%;mayo;
+Antonio Narino;5300;487;0;5787;91,58%;junio;
+Barrios Unidos;3178;8306;418;11902;26,70%;junio;
+Bosa;21027;1265;148;22440;93,70%;junio;
+Chapinero;4736;8071;641;13448;35,22%;junio;
+Ciudad Bolivar;24997;2085;67;27149;92,07%;junio;
+Engativa;29805;5891;268;35964;82,87%;junio;
+Fontibon;13207;4100;500;17807;74,17%;junio;
+Kennedy;36538;2894;593;40025;91,29%;junio;
+La Candelaria;577;1829;98;2504;23,04%;junio;
+Los Martires;2208;4888;157;7253;30,44%;junio;
+Puente Aranda;16300;1967;734;19001;85,78%;junio;
+Rafael Uribe;15741;781;10;16532;95,22%;junio;
+San Cristobal;17109;1232;1;18342;93,28%;junio;
+Santa Fe;2982;5393;452;8827;33,78%;junio;
+Suba;8260;33477;549;42286;19,53%;junio;
+Sumapaz;97;202;0;299;32,44%;junio;
+Teusaquillo;5780;8039;608;14427;40,06%;junio;
+Tunjuelito;1536;5543;19;7098;21,64%;junio;
+Usaquen;21381;3113;1215;25709;83,17%;junio;
+Usme;15692;1562;124;17378;90,30%;junio;
+Antonio Narino;5313;487;0;5800;91,60%;julio;
+Barrios Unidos;3178;8301;413;11892;26,72%;julio;
+Bosa;21036;1264;147;22447;93,71%;julio;
+Chapinero;4736;8055;640;13431;35,26%;julio;
+Ciudad Bolivar;25015;2085;66;27166;92,08%;julio;
+Engativa;29819;5887;266;35972;82,90%;julio;
+Fontibon;13209;4097;490;17796;74,22%;julio;
+Kennedy;36651;2865;592;40108;91,38%;julio;
+La Candelaria;577;1829;98;2504;23,04%;julio;
+Los Martires;2208;4887;157;7252;30,45%;julio;
+Puente Aranda;16305;1967;733;19005;85,79%;julio;
+Rafael Uribe;15768;776;10;16554;95,25%;julio;
+San Cristobal;17150;1232;1;18383;93,29%;julio;
+Santa Fe;2989;5393;440;8822;33,88%;julio;
+Suba;8269;33438;522;42229;19,58%;julio;
+Sumapaz;97;202;0;299;32,44%;julio;
+Teusaquillo;5803;8028;596;14427;40,22%;julio;
+Tunjuelito;1547;5534;20;7101;21,79%;julio;
+Usaquen;21385;3108;1202;25695;83,23%;julio;
+Usme;15696;1562;123;17381;90,31%;julio;
+Antonio Narino;5313;487;0;5800;91,60%;agosto;
+Barrios Unidos;3185;8295;371;11851;26,88%;agosto;
+Bosa;21032;1239;138;22409;93,86%;agosto;
+Chapinero;4750;8051;618;13419;35,40%;agosto;
+Ciudad Bolivar;25095;2083;36;27214;92,21%;agosto;
+Engativa;29855;5882;241;35978;82,98%;agosto;
+Fontibon;13257;4083;487;17827;74,36%;agosto;
+Kennedy;36747;2854;592;40193;91,43%;agosto;
+La Candelaria;577;1829;93;2499;23,09%;agosto;
+Los Martires;2208;4886;130;7224;30,56%;agosto;
+Puente Aranda;16304;1965;718;18987;85,87%;agosto;
+Rafael Uribe;15770;776;8;16554;95,26%;agosto;
+San Cristobal;17165;1232;1;18398;93,30%;agosto;
+Santa Fe;2992;5393;435;8820;33,92%;agosto;
+Suba;8297;33416;459;42172;19,67%;agosto;
+Sumapaz;97;202;0;299;32,44%;agosto;
+Teusaquillo;5819;8027;563;14409;40,38%;agosto;
+Tunjuelito;1579;5534;20;7133;22,14%;agosto;
+Usaquen;21480;3083;1151;25714;83,53%;agosto;
+Usme;15723;1548;123;17394;90,39%;agosto;
+Antonio Narino;5313;487;0;5800;91,60%;septiembre;
+Barrios Unidos;3181;8296;347;11824;26,90%;septiembre;
+Bosa;21036;1238;138;22412;93,86%;septiembre;
+Chapinero;4751;8036;607;13394;35,47%;septiembre;
+Ciudad Bolivar;25098;2091;27;27216;92,22%;septiembre;
+Engativa;29875;5873;220;35968;83,06%;septiembre;
+Fontibon;13309;4111;466;17886;74,41%;septiembre;
+Kennedy;36752;2854;550;40156;91,52%;septiembre;
+La Candelaria;577;1829;82;2488;23,19%;septiembre;
+Los Martires;2207;4885;75;7167;30,79%;septiembre;
+Puente Aranda;16305;1966;666;18937;86,10%;septiembre;
+Rafael Uribe;15778;776;8;16562;95,27%;septiembre;
+San Cristobal;17185;1231;1;18417;93,31%;septiembre;
+Santa Fe;3004;5393;410;8807;34,11%;septiembre;
+Suba;8363;33408;459;42230;19,80%;septiembre;
+Sumapaz;99;202;0;301;32,89%;septiembre;
+Teusaquillo;5819;7933;500;14252;40,83%;septiembre;
+Tunjuelito;1580;5534;20;7134;22,15%;septiembre;
+Usaquen;21488;3084;1151;25723;83,54%;septiembre;
+Usme;15747;1546;86;17379;90,61%;septiembre;
+Antonio Narino;5313;487;0;5800;91,60%;octubre;
+Barrios Unidos;3190;8296;316;11802;27,03%;octubre;
+Bosa;20964;1236;119;22319;93,93%;octubre;
+Chapinero;4751;8036;520;13307;35,70%;octubre;
+Ciudad Bolivar;25121;2091;27;27239;92,22%;octubre;
+Engativa;29909;5872;215;35996;83,09%;octubre;
+Fontibon;13313;4108;457;17878;74,47%;octubre;
+Kennedy;36758;2859;525;40142;91,57%;octubre;
+La Candelaria;577;1829;82;2488;23,19%;octubre;
+Los Martires;2224;4885;75;7184;30,96%;octubre;
+Puente Aranda;16323;1973;665;18961;86,09%;octubre;
+Rafael Uribe;15778;776;8;16562;95,27%;octubre;
+San Cristobal;17201;1231;1;18433;93,32%;octubre;
+Santa Fe;3006;5393;401;8800;34,16%;octubre;
+Suba;8434;33408;446;42288;19,94%;octubre;
+Sumapaz;99;202;0;301;32,89%;octubre;
+Teusaquillo;5823;7933;475;14231;40,92%;octubre;
+Tunjuelito;1583;5533;17;7133;22,19%;octubre;
+Usaquen;21545;3084;1079;25708;83,81%;octubre;
+Usme;15784;1549;82;17415;90,63%;octubre;
+Antonio Narino;5315;487;0;5802;91,61%;noviembre;
+Barrios Unidos;3192;8299;312;11803;27,04%;noviembre;
+Bosa;20979;1230;118;22327;93,96%;noviembre;
+Chapinero;4766;8035;512;13313;35,80%;noviembre;
+Ciudad Bolivar;25140;2089;19;27248;92,26%;noviembre;
+Engativa;29921;5863;215;35999;83,12%;noviembre;
+Fontibon;13323;4102;455;17880;74,51%;noviembre;
+Kennedy;36857;2844;503;40204;91,67%;noviembre;
+La Candelaria;578;1829;82;2489;23,22%;noviembre;
+Los Martires;2223;4885;54;7162;31,04%;noviembre;
+Puente Aranda;16334;1973;669;18976;86,08%;noviembre;
+Rafael Uribe;15764;775;2;16541;95,30%;noviembre;
+San Cristobal;17225;1226;1;18452;93,35%;noviembre;
+Santa Fe;3160;5389;243;8792;35,94%;noviembre;
+Suba;8566;33366;383;42315;20,24%;noviembre;
+Sumapaz;99;202;0;301;32,89%;noviembre;
+Teusaquillo;5828;7931;463;14222;40,98%;noviembre;
+Tunjuelito;1585;5533;16;7134;22,22%;noviembre;
+Usaquen;21594;3083;1052;25729;83,93%;noviembre;
+Usme;15860;1547;67;17474;90,76%;noviembre;
+Antonio Narino;3392;5462;0;8435;40,21%;enero;
+Barrios Unidos;847;1761;545;2626;32,25%;enero;
+Bosa;16001;1237;0;16409;97,51%;enero;
+Chapinero;13463;4030;766;17428;77,25%;enero;
+Ciudad Bolivar;29648;5429;0;36157;82,00%;enero;
+Engativa;21629;2790;1136;26078;82,94%;enero;
+Fontibon;30108;5547;69;35503;84,80%;enero;
+Kennedy;5801;7674;780;14700;39,46%;enero;
+La Candelaria;3497;8775;863;12029;29,07%;enero;
+Los Martires;3411;5124;34;9119;37,41%;enero;
+Puente Aranda;13359;4320;1063;18224;73,30%;enero;
+Rafael Uribe;4992;8195;321;13161;37,93%;enero;
+San Cristobal;2338;5025;34;7080;33,02%;enero;
+Santa Fe;29477;5383;0;35657;82,67%;enero;
+Suba;36556;3352;669;40276;90,76%;enero;
+Sumapaz;16446;1974;413;19346;85,01%;enero;
+Teusaquillo;70;79;0;617;11,35%;enero;
+Tunjuelito;2596;5539;543;8595;30,20%;enero;
+Usaquen;16663;2004;932;18575;89,71%;enero;
+Usme;4973;8063;362;13820;35,98%;enero;
+Antonio Narino;2913;5188;858;9309;31,29%;febrero;
+Barrios Unidos;236;2166;0;2331;10,12%;febrero;
+Bosa;108;29;0;533;20,26%;febrero;
+Chapinero;21806;3340;1495;25989;83,90%;febrero;
+Ciudad Bolivar;2450;5643;763;9057;27,05%;febrero;
+Engativa;5650;175;0;5731;98,59%;febrero;
+Fontibon;16103;1900;476;16932;95,10%;febrero;
+Kennedy;5767;834;0;5472;105,39%;febrero;
+La Candelaria;173;10;333;779;22,21%;febrero;
+Los Martires;16260;1486;864;18658;87,15%;febrero;
+Puente Aranda;29432;5713;0;35574;82,73%;febrero;
+Rafael Uribe;21401;3524;1436;25224;84,84%;febrero;
+San Cristobal;15673;1195;340;16712;93,78%;febrero;
+Santa Fe;21343;1506;0;22380;95,37%;febrero;
+Suba;1243;5466;449;7014;17,72%;febrero;
+Sumapaz;29749;5849;0;36315;81,92%;febrero;
+Teusaquillo;4242;8045;810;13098;32,39%;febrero;
+Tunjuelito;16084;2121;967;19147;84,00%;febrero;
+Usaquen;1312;5380;0;6868;19,10%;febrero;
+Usme;20401;4042;2238;25467;80,11%;febrero;
+Antonio Narino;1310;5376;413;6613;19,81%;marzo;
+Barrios Unidos;29710;5992;0;36482;81,44%;marzo;
+Bosa;2682;5098;796;8908;30,11%;marzo;
+Chapinero;16763;2285;285;19129;87,63%;marzo;
+Ciudad Bolivar;29675;5688;0;35507;83,58%;marzo;
+Engativa;30341;5661;545;35917;84,48%;marzo;
+Fontibon;5307;7836;990;14224;37,31%;marzo;
+Kennedy;36968;2946;385;39986;92,45%;marzo;
+La Candelaria;29843;5583;207;36430;81,92%;marzo;
+Los Martires;8373;33095;851;41862;20,00%;marzo;
+Puente Aranda;29089;6014;299;35741;81,39%;marzo;
+Rafael Uribe;20908;1682;646;22054;94,80%;marzo;
+San Cristobal;21660;3390;1141;26113;82,95%;marzo;
+Santa Fe;28527;6696;708;35632;80,06%;marzo;
+Suba;21430;2996;970;25293;84,73%;marzo;
+Sumapaz;5231;7857;1466;14534;35,99%;marzo;
+Teusaquillo;29609;5475;516;36090;82,04%;marzo;
+Tunjuelito;2461;4750;0;6949;35,42%;marzo;
+Usaquen;15903;2252;1137;19218;82,75%;marzo;
+Usme;15973;406;468;16721;95,53%;marzo;
+Antonio Narino;16305;2331;1167;19012;85,76%;abril;
+Barrios Unidos;2133;8471;299;11510;18,53%;abril;
+Bosa;24643;2047;544;26830;91,85%;abril;
+Chapinero;13082;4274;399;18246;71,70%;abril;
+Ciudad Bolivar;5590;8049;395;14544;38,44%;abril;
+Engativa;21428;2859;1439;26180;81,85%;abril;
+Fontibon;3491;8190;703;11911;29,31%;abril;
+Kennedy;29668;6438;118;36007;82,40%;abril;
+La Candelaria;0;169;78;0;32,44%;abril;
+Los Martires;16915;1693;414;18465;91,61%;abril;
+Puente Aranda;710;1751;0;2616;27,14%;abril;
+Rafael Uribe;472;475;0;668;70,66%;abril;
+San Cristobal;24197;1775;38;27232;88,86%;abril;
+Santa Fe;15891;1790;535;16936;93,83%;abril;
+Suba;15767;1109;440;16969;92,92%;abril;
+Sumapaz;1053;5524;0;7523;14,00%;abril;
+Teusaquillo;25135;2344;0;27064;92,87%;abril;
+Tunjuelito;36785;2421;791;39823;92,37%;abril;
+Usaquen;16040;1248;0;16202;99,00%;abril;
+Usme;21634;2653;812;26138;82,77%;abril;
+Antonio Narino;5085;156;23;5323;95,53%;mayo;
+Barrios Unidos;0;460;0;80;0,00%;mayo;
+Bosa;20992;1868;0;22655;92,66%;mayo;
+Chapinero;36380;3068;802;40063;90,81%;mayo;
+Ciudad Bolivar;16001;428;185;16133;99,18%;mayo;
+Engativa;28999;5864;710;35899;80,78%;mayo;
+Fontibon;16004;1519;0;17070;93,76%;mayo;
+Kennedy;1978;4878;365;7518;26,31%;mayo;
+La Candelaria;4826;8344;535;13865;34,81%;mayo;
+Los Martires;28270;6145;759;36266;77,95%;mayo;
+Puente Aranda;17279;771;0;18162;95,14%;mayo;
+Rafael Uribe;308;0;0;605;50,91%;mayo;
+San Cristobal;29710;5839;427;35562;83,54%;mayo;
+Santa Fe;16687;1617;500;18525;90,08%;mayo;
+Suba;17251;1412;0;18720;92,15%;mayo;
+Sumapaz;1989;4567;0;7358;27,03%;mayo;
+Teusaquillo;25408;2379;0;27502;92,39%;mayo;
+Tunjuelito;24246;2008;0;27390;88,52%;mayo;
+Usaquen;25015;1861;288;26904;92,98%;mayo;
+Usme;28659;6546;1064;36291;78,97%;mayo;
+Antonio Narino;1205;5852;178;7317;16,47%;junio;
+Barrios Unidos;5790;7635;968;14561;39,76%;junio;
+Bosa;17571;1187;0;18635;94,29%;junio;
+Chapinero;7767;33210;384;42721;18,18%;junio;
+Ciudad Bolivar;2613;8596;434;12107;21,58%;junio;
+Engativa;8832;33089;918;42201;20,93%;junio;
+Fontibon;516;0;0;284;181,69%;junio;
+Kennedy;4241;8137;223;13065;32,46%;junio;
+La Candelaria;36265;3300;818;39759;91,21%;junio;
+Los Martires;13272;3662;411;18363;72,28%;junio;
+Puente Aranda;1350;5978;185;7218;18,70%;junio;
+Rafael Uribe;16540;2089;969;19375;85,37%;junio;
+San Cristobal;12880;4673;811;17794;72,38%;junio;
+Santa Fe;5533;897;29;5828;94,94%;junio;
+Suba;3405;4948;431;8403;40,52%;junio;
+Sumapaz;827;2124;0;2894;28,58%;junio;
+Teusaquillo;1519;5614;0;7011;21,67%;junio;
+Tunjuelito;17334;1193;16;18378;94,32%;junio;
+Usaquen;15888;1921;507;17453;91,03%;junio;
+Usme;8576;33781;205;41985;20,43%;junio;
+Antonio Narino;5112;8439;970;13703;37,31%;julio;
+Barrios Unidos;17566;1010;248;18331;95,83%;julio;
+Bosa;13270;3968;219;18346;72,33%;julio;
+Chapinero;2437;5074;750;9195;26,50%;julio;
+Ciudad Bolivar;30270;6261;604;35763;84,64%;julio;
+Engativa;203;14;0;672;30,21%;julio;
+Fontibon;15655;1286;77;16506;94,84%;julio;
+Kennedy;8017;33051;272;42749;18,75%;julio;
+La Candelaria;4982;8234;1020;14604;34,11%;julio;
+Los Martires;0;336;0;448;0,00%;julio;
+Puente Aranda;747;5228;0;7315;10,21%;julio;
+Rafael Uribe;16203;1804;113;17136;94,56%;julio;
+San Cristobal;29614;5713;0;35769;82,79%;julio;
+Santa Fe;17267;1494;296;18620;92,73%;julio;
+Suba;12778;3860;262;17888;71,43%;julio;
+Sumapaz;36992;3265;1000;40474;91,40%;julio;
+Teusaquillo;36702;3064;455;40335;90,99%;julio;
+Tunjuelito;4605;8164;610;13878;33,18%;julio;
+Usaquen;21558;2646;1380;26138;82,48%;julio;
+Usme;1974;5300;0;6926;28,50%;julio;
+Antonio Narino;893;2071;0;2139;41,75%;agosto;
+Barrios Unidos;20718;1327;0;22886;90,53%;agosto;
+Bosa;3412;8255;842;11629;29,34%;agosto;
+Chapinero;992;5687;391;7279;13,63%;agosto;
+Ciudad Bolivar;3461;8342;568;11678;29,64%;agosto;
+Engativa;5627;266;263;5660;99,42%;agosto;
+Fontibon;0;102;0;275;0,00%;agosto;
+Kennedy;1531;5970;0;7552;20,27%;agosto;
+La Candelaria;16416;2316;927;19178;85,60%;agosto;
+Los Martires;4882;7772;1049;13300;36,71%;agosto;
+Puente Aranda;8039;33779;318;41850;19,21%;agosto;
+Rafael Uribe;787;1614;124;2663;29,55%;agosto;
+San Cristobal;5505;210;0;6129;89,82%;agosto;
+Santa Fe;2868;5596;842;9116;31,46%;agosto;
+Suba;3300;8431;230;11932;27,66%;agosto;
+Sumapaz;12715;4528;974;18056;70,42%;agosto;
+Teusaquillo;376;1849;0;2277;16,51%;agosto;
+Tunjuelito;5006;7699;881;13404;37,35%;agosto;
+Usaquen;8318;33334;0;42337;19,65%;agosto;
+Usme;17433;1600;242;18037;96,65%;agosto;
+Antonio Narino;13066;4573;1042;18234;71,66%;septiembre;
+Barrios Unidos;21121;891;65;22375;94,40%;septiembre;
+Bosa;15472;1626;0;16943;91,32%;septiembre;
+Chapinero;1753;4462;560;7411;23,65%;septiembre;
+Ciudad Bolivar;3158;5030;616;8654;36,49%;septiembre;
+Engativa;7896;34098;591;42302;18,67%;septiembre;
+Fontibon;37037;2381;887;40320;91,86%;septiembre;
+Kennedy;3036;8694;46;12078;25,14%;septiembre;
+La Candelaria;8257;33997;148;42253;19,54%;septiembre;
+Los Martires;16123;356;0;16311;98,85%;septiembre;
+Puente Aranda;4329;8556;212;13716;31,56%;septiembre;
+Rafael Uribe;13624;4439;527;18220;74,77%;septiembre;
+San Cristobal;24461;2165;0;26645;91,80%;septiembre;
+Santa Fe;21194;898;99;22612;93,73%;septiembre;
+Suba;20601;974;0;22877;90,05%;septiembre;
+Sumapaz;29346;5433;198;36056;81,39%;septiembre;
+Teusaquillo;5880;7704;959;14346;40,99%;septiembre;
+Tunjuelito;3260;8723;757;11460;28,45%;septiembre;
+Usaquen;36453;2413;473;39863;91,45%;septiembre;
+Usme;268;1932;507;2906;9,22%;septiembre;
+Antonio Narino;25077;2530;282;27118;92,47%;octubre;
+Barrios Unidos;15789;1724;81;17027;92,73%;octubre;
+Bosa;276;1672;0;2702;10,21%;octubre;
+Chapinero;571;1722;504;2950;19,36%;octubre;
+Ciudad Bolivar;17394;1001;0;18098;96,11%;octubre;
+Engativa;181;1428;555;2265;7,99%;octubre;
+Fontibon;1717;5685;0;7389;23,24%;octubre;
+Kennedy;29971;6341;0;35664;84,04%;octubre;
+La Candelaria;0;0;404;431;0,00%;octubre;
+Los Martires;2300;4434;0;7351;31,29%;octubre;
+Puente Aranda;20668;1498;551;22021;93,86%;octubre;
+Rafael Uribe;28207;6257;1076;36249;77,81%;octubre;
+San Cristobal;2636;5172;566;6884;38,29%;octubre;
+Santa Fe;2799;5694;407;8788;31,85%;octubre;
+Suba;1577;5628;330;6999;22,53%;octubre;
+Sumapaz;36695;2672;183;39969;91,81%;octubre;
+Teusaquillo;21041;1047;204;22665;92,83%;octubre;
+Tunjuelito;434;1902;0;2501;17,35%;octubre;
+Usaquen;8579;33117;896;41941;20,45%;octubre;
+Usme;1733;4828;169;7501;23,10%;octubre;
+Antonio Narino;2648;5571;541;9087;29,14%;noviembre;
+Barrios Unidos;4909;624;303;5939;82,66%;noviembre;
+Bosa;2486;5148;0;7167;34,69%;noviembre;
+Chapinero;5353;7739;538;14894;35,94%;noviembre;
+Ciudad Bolivar;8759;33171;868;42022;20,84%;noviembre;
+Engativa;15453;1985;0;17389;88,87%;noviembre;
+Fontibon;5513;7510;180;14193;38,84%;noviembre;
+Kennedy;28402;6540;1481;36475;77,87%;noviembre;
+La Candelaria;15938;2224;1313;18620;85,60%;noviembre;
+Los Martires;4994;8436;835;13155;37,96%;noviembre;
+Puente Aranda;16292;1566;617;18680;87,22%;noviembre;
+Rafael Uribe;13641;3805;894;17601;77,50%;noviembre;
+San Cristobal;15589;1132;620;17078;91,28%;noviembre;
+Santa Fe;1261;6012;108;6884;18,32%;noviembre;
+Suba;2858;7896;0;12279;23,28%;noviembre;
+Sumapaz;24191;2650;576;26743;90,46%;noviembre;
+Teusaquillo;5489;76;0;6079;90,29%;noviembre;
+Tunjuelito;24952;2253;274;27287;91,44%;noviembre;
+Usaquen;2507;5648;622;8351;30,02%;noviembre;
+Usme;13088;4196;720;17970;72,83%;noviembre;
+Antonio Narino;1960;4785;0;7590;25,82%;enero;
+Barrios Unidos;16164;2493;662;19128;84,50%;enero;
+Bosa;15575;1349;837;17136;90,89%;enero;
+Chapinero;12819;4123;175;17708;72,39%;enero;
+Ciudad Bolivar;7894;33268;766;42435;18,60%;enero;
+Engativa;16749;2356;1169;19488;85,95%;enero;
+Fontibon;13506;4596;73;17388;77,67%;enero;
+Kennedy;15405;960;0;16619;92,70%;enero;
+La Candelaria;15787;1348;305;17579;89,81%;enero;
+Los Martires;15922;1649;515;19086;83,42%;enero;
+Puente Aranda;5809;753;435;5522;105,20%;enero;
+Rafael Uribe;20770;1426;0;22382;92,80%;enero;
+San Cristobal;8326;33222;579;42492;19,59%;enero;
+Santa Fe;8350;33328;926;42248;19,76%;enero;
+Suba;2713;8599;1031;11642;23,30%;enero;
+Sumapaz;15210;577;0;16781;90,64%;enero;
+Teusaquillo;13325;4373;600;17482;76,22%;enero;
+Tunjuelito;15949;1344;128;17706;90,08%;enero;
+Usaquen;36556;3325;296;39550;92,43%;enero;
+Usme;14998;1746;15;16900;88,75%;enero;
+Antonio Narino;20947;2892;1362;25942;80,75%;febrero;
+Barrios Unidos;36750;3320;621;40485;90,77%;febrero;
+Bosa;15587;1694;0;17826;87,44%;febrero;
+Chapinero;16142;1234;0;16391;98,48%;febrero;
+Ciudad Bolivar;12628;4224;570;17666;71,48%;febrero;
+Engativa;13460;3800;69;18160;74,12%;febrero;
+Fontibon;29587;6019;494;35766;82,72%;febrero;
+Kennedy;2495;5028;0;7227;34,52%;febrero;
+La Candelaria;16627;1489;281;19076;87,16%;febrero;
+Los Martires;5900;8101;705;13948;42,30%;febrero;
+Puente Aranda;17088;1106;462;18174;94,02%;febrero;
+Rafael Uribe;5359;7570;297;13991;38,30%;febrero;
+San Cristobal;29763;5792;624;36180;82,26%;febrero;
+Santa Fe;2849;8193;605;11953;23,84%;febrero;
+Suba;8260;33498;404;42321;19,52%;febrero;
+Sumapaz;5016;8329;718;13410;37,40%;febrero;
+Teusaquillo;2880;5721;955;9297;30,98%;febrero;
+Tunjuelito;15412;1255;0;16546;93,15%;febrero;
+Usaquen;868;1767;247;2629;33,02%;febrero;
+Usme;25057;2525;242;27116;92,41%;febrero;
+Antonio Narino;21803;3405;1130;25334;86,06%;marzo;
+Barrios Unidos;2939;8139;329;12195;24,10%;marzo;
+Bosa;2981;8323;783;12136;24,56%;marzo;
+Chapinero;5241;305;249;6225;84,19%;marzo;
+Ciudad Bolivar;4979;8449;984;13616;36,57%;marzo;
+Engativa;16009;704;0;16218;98,71%;marzo;
+Fontibon;5237;7907;757;14117;37,10%;marzo;
+Kennedy;439;2232;0;2261;19,42%;marzo;
+La Candelaria;8188;32912;745;42595;19,22%;marzo;
+Los Martires;4957;637;0;5912;83,85%;marzo;
+Puente Aranda;13669;4231;236;17892;76,40%;marzo;
+Rafael Uribe;21483;3093;761;25806;83,25%;marzo;
+San Cristobal;4493;7557;790;13064;34,39%;marzo;
+Santa Fe;2346;4983;415;7224;32,48%;marzo;
+Suba;5294;8428;437;14423;36,71%;marzo;
+Sumapaz;15671;657;162;16711;93,78%;marzo;
+Teusaquillo;36545;2723;1030;39710;92,03%;marzo;
+Tunjuelito;17337;1718;0;18127;95,64%;marzo;
+Usaquen;1719;4602;420;7322;23,48%;marzo;
+Usme;4764;7766;142;13721;34,72%;marzo;
+Antonio Narino;13488;3645;638;17471;77,20%;abril;
+Barrios Unidos;225;0;383;645;34,88%;abril;
+Bosa;1974;5177;635;7057;27,97%;abril;
+Chapinero;2870;5596;637;8427;34,06%;abril;
+Ciudad Bolivar;20561;1504;414;22269;92,33%;abril;
+Engativa;17413;750;0;18388;94,70%;abril;
+Fontibon;13609;4099;411;17558;77,51%;abril;
+Kennedy;15499;922;0;16130;96,09%;abril;
+La Candelaria;6305;8036;632;14081;44,78%;abril;
+Los Martires;5740;8201;372;14832;38,70%;abril;
+Puente Aranda;4962;14;166;5705;86,98%;abril;
+Rafael Uribe;16771;1756;533;18946;88,52%;abril;
+San Cristobal;20640;1298;119;22809;90,49%;abril;
+Santa Fe;23981;1981;733;26727;89,73%;abril;
+Suba;13014;4418;684;17463;74,52%;abril;
+Sumapaz;21031;1656;98;22062;95,33%;abril;
+Teusaquillo;4958;7858;877;13410;36,97%;abril;
+Tunjuelito;4984;572;0;6191;80,50%;abril;
+Usaquen;20675;1630;325;22549;91,69%;abril;
+Usme;247;1990;521;2357;10,48%;abril;
+Antonio Narino;4823;8471;409;13021;37,04%;mayo;
+Barrios Unidos;20713;927;518;22358;92,64%;mayo;
+Bosa;5775;617;0;5362;107,70%;mayo;
+Chapinero;35901;2543;528;40343;88,99%;mayo;
+Ciudad Bolivar;15878;405;0;16779;94,63%;mayo;
+Engativa;12730;3749;1107;17492;72,78%;mayo;
+Fontibon;12993;3989;624;17582;73,90%;mayo;
+Kennedy;5499;8251;1101;14169;38,81%;mayo;
+La Candelaria;29541;5448;462;35998;82,06%;mayo;
+Los Martires;0;0;238;384;0,00%;mayo;
+Puente Aranda;15821;1932;577;18543;85,32%;mayo;
+Rafael Uribe;36760;2777;596;39805;92,35%;mayo;
+San Cristobal;5565;414;0;6104;91,17%;mayo;
+Santa Fe;21600;3192;1218;26106;82,74%;mayo;
+Suba;24977;2503;526;27014;92,46%;mayo;
+Sumapaz;6009;7654;991;14400;41,73%;mayo;
+Teusaquillo;21458;1054;646;22955;93,48%;mayo;
+Tunjuelito;1186;5251;0;6785;17,48%;mayo;
+Usaquen;5611;8512;346;14356;39,08%;mayo;
+Usme;5144;685;6;5820;88,38%;mayo;
+Antonio Narino;26;0;56;305;8,52%;junio;
+Barrios Unidos;2521;5563;376;9095;27,72%;junio;
+Bosa;25308;2073;0;27273;92,80%;junio;
+Chapinero;5628;8539;731;14251;39,49%;junio;
+Ciudad Bolivar;13242;4331;0;18036;73,42%;junio;
+Engativa;630;1982;0;2237;28,16%;junio;
+Fontibon;29070;6360;550;36215;80,27%;junio;
+Kennedy;2760;8633;330;11992;23,02%;junio;
+La Candelaria;36317;2524;966;40393;89,91%;junio;
+Los Martires;21455;1192;0;22825;94,00%;junio;
+Puente Aranda;21360;1792;0;22387;95,41%;junio;
+Rafael Uribe;17270;1275;0;18869;91,53%;junio;
+San Cristobal;35638;2976;1197;40328;88,37%;junio;
+Santa Fe;13393;4013;294;17363;77,14%;junio;
+Suba;1339;5777;0;6977;19,19%;junio;
+Sumapaz;8437;33764;288;42279;19,96%;junio;
+Teusaquillo;37082;2686;457;39734;93,33%;junio;
+Tunjuelito;4806;8419;961;13065;36,79%;junio;
+Usaquen;2975;5414;490;9307;31,97%;junio;
+Usme;8323;33687;486;42396;19,63%;junio;
+Antonio Narino;36362;2851;538;40064;90,76%;julio;
+Barrios Unidos;15478;2059;435;17198;90,00%;julio;
+Bosa;15422;1102;0;16154;95,47%;julio;
+Chapinero;3512;7818;538;11912;29,48%;julio;
+Ciudad Bolivar;2862;8348;1018;11652;24,56%;julio;
+Engativa;347;1453;248;2337;14,85%;julio;
+Fontibon;2444;5009;0;7256;33,68%;julio;
+Kennedy;2799;5702;691;9104;30,74%;julio;
+La Candelaria;8873;33458;299;42660;20,80%;julio;
+Los Martires;30225;5531;707;36432;82,96%;julio;
+Puente Aranda;36482;3210;386;40464;90,16%;julio;
+Rafael Uribe;16037;2011;516;17773;90,23%;julio;
+San Cristobal;37040;2685;302;40284;91,95%;julio;
+Santa Fe;13461;4164;634;17957;74,96%;julio;
+Suba;1758;5535;21;6695;26,26%;julio;
+Sumapaz;16711;882;0;18034;92,66%;julio;
+Teusaquillo;17413;1460;81;18410;94,58%;julio;
+Tunjuelito;20832;951;278;22388;93,05%;julio;
+Usaquen;4814;8119;913;13742;35,03%;julio;
+Usme;3090;5543;396;8405;36,76%;julio;
+Antonio Narino;36353;2542;1173;40327;90,15%;agosto;
+Barrios Unidos;24932;1971;616;27549;90,50%;agosto;
+Bosa;3437;5040;471;8490;40,48%;agosto;
+Chapinero;16058;685;39;16349;98,22%;agosto;
+Ciudad Bolivar;13110;4581;266;17935;73,10%;agosto;
+Engativa;3190;8106;243;11997;26,59%;agosto;
+Fontibon;20895;3032;1629;25895;80,69%;agosto;
+Kennedy;19401;3585;1817;25778;75,26%;agosto;
+La Candelaria;15827;540;427;16987;93,17%;agosto;
+Los Martires;5569;8077;282;14393;38,69%;agosto;
+Puente Aranda;650;1391;0;2783;23,36%;agosto;
+Rafael Uribe;36914;3035;292;40378;91,42%;agosto;
+San Cristobal;471;143;439;263;179,09%;agosto;
+Santa Fe;6143;7498;786;14049;43,73%;agosto;
+Suba;36385;3209;362;39685;91,68%;agosto;
+Sumapaz;29339;5702;80;35854;81,83%;agosto;
+Teusaquillo;364;2060;574;2468;14,75%;agosto;
+Tunjuelito;8315;32951;267;41940;19,83%;agosto;
+Usaquen;0;0;0;0;32,44%;agosto;
+Usme;5800;7629;602;14655;39,58%;agosto;
+Antonio Narino;5334;8426;796;14436;36,95%;septiembre;
+Barrios Unidos;15459;770;31;16255;95,10%;septiembre;
+Bosa;5156;197;0;5669;90,95%;septiembre;
+Chapinero;4351;8191;188;13378;32,52%;septiembre;
+Ciudad Bolivar;16192;1962;640;18523;87,42%;septiembre;
+Engativa;16539;2056;545;18773;88,10%;septiembre;
+Fontibon;4874;7856;821;13867;35,15%;septiembre;
+Kennedy;3127;5437;480;8709;35,91%;septiembre;
+La Candelaria;16712;1564;213;18849;88,66%;septiembre;
+Los Martires;371;1915;0;2432;15,25%;septiembre;
+Puente Aranda;809;1595;0;2891;27,98%;septiembre;
+Rafael Uribe;15599;1557;570;17717;88,05%;septiembre;
+San Cristobal;16686;1072;0;18093;92,22%;septiembre;
+Santa Fe;13274;4025;589;17876;74,26%;septiembre;
+Suba;5069;981;257;5427;93,40%;septiembre;
+Sumapaz;8592;33808;0;41803;20,55%;septiembre;
+Teusaquillo;21065;1082;623;22279;94,55%;septiembre;
+Tunjuelito;16779;1085;0;18589;90,26%;septiembre;
+Usaquen;16634;1236;0;18712;88,89%;septiembre;
+Usme;3299;8768;0;11552;28,56%;septiembre;
+Antonio Narino;4643;8471;969;13790;33,67%;octubre;
+Barrios Unidos;4178;7706;706;13761;30,36%;octubre;
+Bosa;16107;1990;123;17020;94,64%;octubre;
+Chapinero;4534;8394;198;13505;33,57%;octubre;
+Ciudad Bolivar;15932;1837;1418;18701;85,19%;octubre;
+Engativa;20823;1213;380;22077;94,32%;octubre;
+Fontibon;1916;5047;0;7288;26,29%;octubre;
+Kennedy;0;650;0;528;0,00%;octubre;
+La Candelaria;500;2240;165;2406;20,78%;octubre;
+Los Martires;29652;6163;679;36104;82,13%;octubre;
+Puente Aranda;8166;33444;41;41852;19,51%;octubre;
+Rafael Uribe;467;1882;536;2883;16,20%;octubre;
+San Cristobal;2787;5231;310;9204;30,28%;octubre;
+Santa Fe;5125;288;422;5460;93,86%;octubre;
+Suba;7862;33516;694;41896;18,77%;octubre;
+Sumapaz;24869;1662;659;26884;92,50%;octubre;
+Teusaquillo;2160;4855;0;7249;29,80%;octubre;
+Tunjuelito;1513;5726;0;7234;20,92%;octubre;
+Usaquen;3042;8129;475;12274;24,78%;octubre;
+Usme;2686;8335;619;11692;22,97%;octubre;
+Antonio Narino;36181;3148;1466;39906;90,67%;noviembre;
+Barrios Unidos;7902;33378;814;42193;18,73%;noviembre;
+Bosa;5055;7782;636;13912;36,34%;noviembre;
+Chapinero;8111;33962;590;42043;19,29%;noviembre;
+Ciudad Bolivar;0;240;0;0;32,44%;noviembre;
+Engativa;5720;8285;1064;14257;40,12%;noviembre;
+Fontibon;24565;2351;421;26934;91,20%;noviembre;
+Kennedy;4166;8565;1137;13212;31,53%;noviembre;
+La Candelaria;15389;516;124;16620;92,59%;noviembre;
+Los Martires;21041;1671;0;22609;93,06%;noviembre;
+Puente Aranda;5099;450;242;5692;89,58%;noviembre;
+Rafael Uribe;2893;5397;70;8698;33,26%;noviembre;
+San Cristobal;117;0;488;562;20,82%;noviembre;
+Santa Fe;16217;557;486;16815;96,44%;noviembre;
+Suba;8612;33923;716;42658;20,19%;noviembre;
+Sumapaz;197;364;0;553;35,62%;noviembre;
+Teusaquillo;352;591;0;519;67,82%;noviembre;
+Tunjuelito;16190;1739;1042;18870;85,80%;noviembre;
+Usaquen;15412;1831;448;17324;88,96%;noviembre;
+Usme;29971;5534;0;35549;84,31%;noviembre;
+Antonio Narino;1714;5247;30;7428;23,07%;enero;
+Barrios Unidos;0;589;0;407;0,00%;enero;
+Bosa;21034;3012;1460;25343;83,00%;enero;
+Chapinero;37128;3061;868;39825;93,23%;enero;
+Ciudad Bolivar;487;1998;352;2369;20,56%;enero;
+Engativa;30263;5777;0;35987;84,09%;enero;
+Fontibon;24849;1870;485;27040;91,90%;enero;
+Kennedy;21267;3376;1123;25332;83,95%;enero;
+La Candelaria;24658;1804;0;27301;90,32%;enero;
+Los Martires;17244;1020;472;18703;92,20%;enero;
+Puente Aranda;5654;641;0;5328;106,12%;enero;
+Rafael Uribe;102;150;160;619;16,48%;enero;
+San Cristobal;13124;4129;916;17294;75,89%;enero;
+Santa Fe;2164;5271;0;7084;30,55%;enero;
+Suba;2678;5524;262;8473;31,61%;enero;
+Sumapaz;12688;4142;679;17790;71,32%;enero;
+Teusaquillo;25312;2229;0;27137;93,27%;enero;
+Tunjuelito;1921;5892;525;6677;28,77%;enero;
+Usaquen;2764;8780;668;12301;22,47%;enero;
+Usme;20357;1155;406;22892;88,93%;enero;
+Antonio Narino;606;1838;0;2909;20,83%;febrero;
+Barrios Unidos;5771;8287;423;13757;41,95%;febrero;
+Bosa;8038;33385;767;41822;19,22%;febrero;
+Chapinero;20182;4110;1791;26126;77,25%;febrero;
+Ciudad Bolivar;15489;325;349;16916;91,56%;febrero;
+Engativa;17687;1144;101;18242;96,96%;febrero;
+Fontibon;8507;33241;0;42751;19,90%;febrero;
+Kennedy;15198;982;164;16305;93,21%;febrero;
+La Candelaria;17251;1349;0;18473;93,38%;febrero;
+Los Martires;29574;6360;0;35975;82,21%;febrero;
+Puente Aranda;2685;8209;720;12184;22,04%;febrero;
+Rafael Uribe;30055;6066;7;35556;84,53%;febrero;
+San Cristobal;15762;618;312;16416;96,02%;febrero;
+Santa Fe;7190;33876;681;42682;16,85%;febrero;
+Suba;8362;33684;470;42043;19,89%;febrero;
+Sumapaz;36727;2747;929;40680;90,28%;febrero;
+Teusaquillo;5694;494;98;6100;93,34%;febrero;
+Tunjuelito;7863;33319;870;42446;18,52%;febrero;
+Usaquen;15926;2016;529;18743;84,97%;febrero;
+Usme;15364;826;27;16757;91,69%;febrero;
+Antonio Narino;4993;596;0;5632;88,65%;marzo;
+Barrios Unidos;29469;6445;255;35678;82,60%;marzo;
+Bosa;28869;6224;566;36231;79,68%;marzo;
+Chapinero;21458;1162;289;21979;97,63%;marzo;
+Ciudad Bolivar;2046;8715;388;12233;16,73%;marzo;
+Engativa;2152;4900;0;7053;30,51%;marzo;
+Fontibon;0;590;235;659;0,00%;marzo;
+Kennedy;20657;1408;591;22552;91,60%;marzo;
+La Candelaria;13127;3809;10;18271;71,85%;marzo;
+Los Martires;323;2281;347;2545;12,69%;marzo;
+Puente Aranda;21287;1715;180;22052;96,53%;marzo;
+Rafael Uribe;24246;2258;533;26867;90,24%;marzo;
+San Cristobal;3478;8444;160;11453;30,37%;marzo;
+Santa Fe;29694;5720;581;36244;81,93%;marzo;
+Suba;3449;8275;455;11781;29,28%;marzo;
+Sumapaz;17486;1151;388;18482;94,61%;marzo;
+Teusaquillo;25400;2100;0;27458;92,50%;marzo;
+Tunjuelito;16000;2064;1081;19346;82,70%;marzo;
+Usaquen;21383;3414;1284;25399;84,19%;marzo;
+Usme;29712;5987;498;35961;82,62%;marzo;
+Antonio Narino;133;2311;110;2649;5,02%;abril;
+Barrios Unidos;8169;33332;156;42361;19,28%;abril;
+Bosa;5252;0;0;5674;92,56%;abril;
+Chapinero;7624;34098;532;41913;18,19%;abril;
+Ciudad Bolivar;6275;8365;946;14561;43,09%;abril;
+Engativa;30191;5430;538;36141;83,54%;abril;
+Fontibon;2617;5104;49;6924;37,80%;abril;
+Kennedy;5621;8033;147;14690;38,26%;abril;
+La Candelaria;12827;4011;315;18272;70,20%;abril;
+Los Martires;3141;8443;431;11735;26,77%;abril;
+Puente Aranda;15665;923;0;16336;95,89%;abril;
+Rafael Uribe;2032;6024;385;6780;29,97%;abril;
+San Cristobal;29954;6279;43;36167;82,82%;abril;
+Santa Fe;1834;5353;0;6824;26,88%;abril;
+Suba;30332;6293;204;36333;83,48%;abril;
+Sumapaz;2416;4413;34;7202;33,55%;abril;
+Teusaquillo;21250;1142;74;22739;93,45%;abril;
+Tunjuelito;25309;1688;40;27243;92,90%;abril;
+Usaquen;15650;1892;1327;19171;81,63%;abril;
+Usme;17595;940;458;18903;93,08%;abril;
+Antonio Narino;2643;5237;0;7003;37,74%;mayo;
+Barrios Unidos;21057;1284;531;22074;95,39%;mayo;
+Bosa;20534;1587;409;22553;91,05%;mayo;
+Chapinero;2306;5569;793;9265;24,89%;mayo;
+Ciudad Bolivar;116;1584;0;2739;4,24%;mayo;
+Engativa;36379;3069;781;40139;90,63%;mayo;
+Fontibon;15958;1863;306;17248;92,52%;mayo;
+Kennedy;13442;3874;417;18276;73,55%;mayo;
+La Candelaria;25124;2208;0;27000;93,05%;mayo;
+Los Martires;3323;5279;912;9155;36,30%;mayo;
+Puente Aranda;36043;2790;793;40474;89,05%;mayo;
+Rafael Uribe;36263;2441;425;39757;91,21%;mayo;
+San Cristobal;24434;1809;428;27481;88,91%;mayo;
+Santa Fe;5413;7700;500;14668;36,90%;mayo;
+Suba;30245;5514;660;35911;84,22%;mayo;
+Sumapaz;2030;4536;0;7269;27,93%;mayo;
+Teusaquillo;5039;8264;689;13511;37,30%;mayo;
+Tunjuelito;8506;33319;462;42645;19,95%;mayo;
+Usaquen;421;0;348;188;223,94%;mayo;
+Usme;24413;1760;605;26636;91,65%;mayo;
+Antonio Narino;5075;8525;108;13593;37,34%;junio;
+Barrios Unidos;24642;2136;0;27529;89,51%;junio;
+Bosa;36512;2533;877;40018;91,24%;junio;
+Chapinero;5997;7889;661;13823;43,38%;junio;
+Ciudad Bolivar;3150;5490;136;9043;34,83%;junio;
+Engativa;8673;33746;201;42727;20,30%;junio;
+Fontibon;30236;6044;0;35491;85,19%;junio;
+Kennedy;24597;1881;455;27572;89,21%;junio;
+La Candelaria;8841;33651;195;42310;20,90%;junio;
+Los Martires;1895;4845;0;6939;27,31%;junio;
+Puente Aranda;15464;494;545;16762;92,26%;junio;
+Rafael Uribe;21165;1284;41;21837;96,92%;junio;
+San Cristobal;16212;1296;0;17201;94,25%;junio;
+Santa Fe;16326;2130;1029;19293;84,62%;junio;
+Suba;8552;33679;555;41876;20,42%;junio;
+Sumapaz;4659;8417;373;13621;34,20%;junio;
+Teusaquillo;263;2234;146;2959;8,89%;junio;
+Tunjuelito;2656;5439;600;8318;31,93%;junio;
+Usaquen;4840;79;0;6110;79,21%;junio;
+Usme;2722;8417;77;12182;22,34%;junio;
+Antonio Narino;15380;1250;0;16157;95,19%;julio;
+Barrios Unidos;5079;301;188;6058;83,84%;julio;
+Bosa;12822;4621;577;17796;72,05%;julio;
+Chapinero;721;2029;516;2809;25,67%;julio;
+Ciudad Bolivar;2749;8860;226;11491;23,92%;julio;
+Engativa;15574;2036;494;17199;90,55%;julio;
+Fontibon;3075;4963;1115;9022;34,08%;julio;
+Kennedy;2592;9004;825;11490;22,56%;julio;
+La Candelaria;20782;945;508;22059;94,21%;julio;
+Los Martires;15503;1846;965;18920;81,94%;julio;
+Puente Aranda;4878;666;0;5928;82,29%;julio;
+Rafael Uribe;4692;7648;533;13699;34,25%;julio;
+San Cristobal;24940;1735;159;26780;93,13%;julio;
+Santa Fe;36832;3185;152;40575;90,78%;julio;
+Suba;19608;4002;2401;25579;76,66%;julio;
+Sumapaz;16929;1553;388;18256;92,73%;julio;
+Teusaquillo;2363;4804;557;7681;30,76%;julio;
+Tunjuelito;25266;1777;17;27343;92,40%;julio;
+Usaquen;36440;3060;504;40010;91,08%;julio;
+Usme;4870;7618;505;13405;36,33%;julio;
+Antonio Narino;2198;5331;421;7697;28,56%;agosto;
+Barrios Unidos;722;2236;0;2667;27,07%;agosto;
+Bosa;25176;1947;550;27483;91,61%;agosto;
+Chapinero;21439;2951;1380;26008;82,43%;agosto;
+Ciudad Bolivar;8027;33898;665;41859;19,18%;agosto;
+Engativa;15330;323;198;16927;90,57%;agosto;
+Fontibon;24735;2053;548;26705;92,62%;agosto;
+Kennedy;5318;7827;777;14024;37,92%;agosto;
+La Candelaria;16970;1069;314;18421;92,12%;agosto;
+Los Martires;4935;435;451;6143;80,34%;agosto;
+Puente Aranda;36232;2876;503;39568;91,57%;agosto;
+Rafael Uribe;25308;2307;524;27495;92,05%;agosto;
+San Cristobal;8222;33885;862;42175;19,49%;agosto;
+Santa Fe;15150;572;0;16201;93,51%;agosto;
+Suba;885;5446;0;6700;13,21%;agosto;
+Sumapaz;21196;2736;763;25798;82,16%;agosto;
+Teusaquillo;5377;8398;822;14554;36,95%;agosto;
+Tunjuelito;20631;943;0;22167;93,07%;agosto;
+Usaquen;6080;8393;839;14124;43,05%;agosto;
+Usme;2926;8198;687;12153;24,08%;agosto;
+Antonio Narino;24764;2142;532;27317;90,65%;septiembre;
+Barrios Unidos;1665;5658;98;7586;21,95%;septiembre;
+Bosa;16143;1850;797;19237;83,92%;septiembre;
+Chapinero;24908;2151;0;27047;92,09%;septiembre;
+Ciudad Bolivar;5702;51;14;5494;103,79%;septiembre;
+Engativa;13524;3884;224;17892;75,59%;septiembre;
+Fontibon;16562;2030;434;18637;88,87%;septiembre;
+Kennedy;2790;5594;737;8738;31,93%;septiembre;
+La Candelaria;21808;3213;1562;25463;85,65%;septiembre;
+Los Martires;5010;8394;942;14988;33,43%;septiembre;
+Puente Aranda;389;2258;487;2436;15,97%;septiembre;
+Rafael Uribe;5315;231;0;6009;88,45%;septiembre;
+San Cristobal;17009;1105;44;18122;93,86%;septiembre;
+Santa Fe;5268;71;423;5785;91,06%;septiembre;
+Suba;1968;5667;0;6763;29,10%;septiembre;
+Sumapaz;13173;3987;281;17843;73,83%;septiembre;
+Teusaquillo;15958;401;286;16820;94,88%;septiembre;
+Tunjuelito;13534;4575;309;18291;73,99%;septiembre;
+Usaquen;2690;5257;538;7447;36,12%;septiembre;
+Usme;5944;7572;1068;14951;39,76%;septiembre;
+Antonio Narino;15603;1720;170;17384;89,75%;octubre;
+Barrios Unidos;4476;7690;897;13373;33,47%;octubre;
+Bosa;1978;4528;0;6781;29,17%;octubre;
+Chapinero;20705;3108;909;25484;81,25%;octubre;
+Ciudad Bolivar;13488;4591;960;17322;77,87%;octubre;
+Engativa;4922;8339;490;13609;36,17%;octubre;
+Fontibon;17323;1693;0;18151;95,44%;octubre;
+Kennedy;1156;5545;123;7358;15,71%;octubre;
+La Candelaria;2939;5206;90;8762;33,54%;octubre;
+Los Martires;16102;2180;1291;19437;82,84%;octubre;
+Puente Aranda;485;2069;301;2746;17,66%;octubre;
+Rafael Uribe;1258;5367;152;6963;18,07%;octubre;
+San Cristobal;15344;1317;568;17620;87,08%;octubre;
+Santa Fe;28842;6195;1115;36155;79,77%;octubre;
+Suba;15903;948;0;16502;96,37%;octubre;
+Sumapaz;36051;3102;233;40044;90,03%;octubre;
+Teusaquillo;17389;1136;203;18605;93,46%;octubre;
+Tunjuelito;8878;33630;451;42504;20,89%;octubre;
+Usaquen;3452;8239;0;11661;29,60%;octubre;
+Usme;30108;6247;68;36341;82,85%;octubre;
+Antonio Narino;2653;5848;372;8864;29,93%;noviembre;
+Barrios Unidos;4564;8407;183;13447;33,94%;noviembre;
+Bosa;30075;5897;498;36307;82,84%;noviembre;
+Chapinero;1154;5161;84;7483;15,42%;noviembre;
+Ciudad Bolivar;16762;1862;859;19175;87,42%;noviembre;
+Engativa;5773;8103;909;14186;40,70%;noviembre;
+Fontibon;3321;5770;200;8582;38,70%;noviembre;
+Kennedy;4798;195;0;6038;79,46%;noviembre;
+La Candelaria;21533;2997;1172;26194;82,21%;noviembre;
+Los Martires;21836;2744;657;25756;84,78%;noviembre;
+Puente Aranda;879;1463;0;2320;37,89%;noviembre;
+Rafael Uribe;17018;967;0;18360;92,69%;noviembre;
+San Cristobal;12475;4617;1234;17743;70,31%;noviembre;
+Santa Fe;8290;33220;819;42308;19,59%;noviembre;
+Suba;692;1959;0;2560;27,03%;noviembre;
+Sumapaz;16280;1533;354;19345;84,16%;noviembre;
+Teusaquillo;20624;873;0;22010;93,70%;noviembre;
+Tunjuelito;15833;2436;1123;18733;84,52%;noviembre;
+Usaquen;13527;4144;414;18093;74,76%;noviembre;
+Usme;0;182;11;129;0,00%;noviembre;
+Antonio Narino;5672;692;65;5369;105,64%;enero;
+Barrios Unidos;17291;1297;225;18591;93,01%;enero;
+Bosa;5535;8282;537;14758;37,51%;enero;
+Chapinero;4282;8437;434;13189;32,47%;enero;
+Ciudad Bolivar;2538;4509;303;7194;35,28%;enero;
+Engativa;4871;8417;1056;13687;35,59%;enero;
+Fontibon;4924;962;174;5972;82,45%;enero;
+Kennedy;477;2328;587;2881;16,56%;enero;
+La Candelaria;4374;7709;1036;12976;33,71%;enero;
+Los Martires;24806;1751;118;27460;90,34%;enero;
+Puente Aranda;0;85;0;0;32,44%;enero;
+Rafael Uribe;160;1980;319;2647;6,04%;enero;
+San Cristobal;178;2073;351;2480;7,18%;enero;
+Santa Fe;0;700;97;264;0,00%;enero;
+Suba;20119;3870;2208;25999;77,38%;enero;
+Sumapaz;17012;977;170;18429;92,31%;enero;
+Teusaquillo;3411;8411;606;11815;28,87%;enero;
+Tunjuelito;16061;280;0;16333;98,33%;enero;
+Usaquen;1774;5848;267;7362;24,10%;enero;
+Usme;37112;3210;954;40186;92,35%;enero;
+Antonio Narino;20747;997;372;22535;92,07%;febrero;
+Barrios Unidos;13492;3983;484;17900;75,37%;febrero;
+Bosa;2460;8268;801;11885;20,70%;febrero;
+Chapinero;13347;4179;924;18203;73,32%;febrero;
+Ciudad Bolivar;1523;5405;125;6897;22,08%;febrero;
+Engativa;2127;4728;0;6896;30,84%;febrero;
+Fontibon;8249;33350;567;42432;19,44%;febrero;
+Kennedy;5022;128;0;5925;84,76%;febrero;
+La Candelaria;2375;4983;433;7395;32,12%;febrero;
+Los Martires;24663;2525;490;27300;90,34%;febrero;
+Puente Aranda;15943;1000;241;16137;98,80%;febrero;
+Rafael Uribe;15584;434;0;16888;92,28%;febrero;
+San Cristobal;267;0;0;336;79,46%;febrero;
+Santa Fe;1796;5230;515;7558;23,76%;febrero;
+Suba;2879;4910;516;8879;32,42%;febrero;
+Sumapaz;21008;3063;1511;26165;80,29%;febrero;
+Teusaquillo;3274;8480;689;12283;26,65%;febrero;
+Tunjuelito;4803;8441;626;13915;34,52%;febrero;
+Usaquen;4962;938;435;5793;85,66%;febrero;
+Usme;5030;8116;135;13651;36,85%;febrero;
+Antonio Narino;21539;3160;900;25306;85,11%;marzo;
+Barrios Unidos;16673;975;233;18812;88,63%;marzo;
+Bosa;29888;6175;540;36180;82,61%;marzo;
+Chapinero;2212;4994;550;8395;26,35%;marzo;
+Ciudad Bolivar;5205;860;0;5473;95,10%;marzo;
+Engativa;21377;1606;0;22500;95,01%;marzo;
+Fontibon;21271;1219;227;22226;95,70%;marzo;
+Kennedy;20958;1725;0;22054;95,03%;marzo;
+La Candelaria;28772;6582;597;35716;80,56%;marzo;
+Los Martires;15462;481;0;16824;91,90%;marzo;
+Puente Aranda;21141;1201;112;22555;93,73%;marzo;
+Rafael Uribe;15937;1236;0;17789;89,59%;marzo;
+San Cristobal;24791;1703;0;26715;92,80%;marzo;
+Santa Fe;14716;1496;302;16851;87,33%;marzo;
+Suba;4495;8043;1165;12946;34,72%;marzo;
+Sumapaz;5295;8552;1354;14076;37,62%;marzo;
+Teusaquillo;13016;3655;1002;17900;72,72%;marzo;
+Tunjuelito;15456;830;131;16883;91,55%;marzo;
+Usaquen;21954;2844;1184;25607;85,73%;marzo;
+Usme;15815;1765;1105;19346;81,75%;marzo;
+Antonio Narino;36371;3045;806;40146;90,60%;abril;
+Barrios Unidos;18996;3871;1920;25821;73,57%;abril;
+Bosa;21354;1196;24;22575;94,59%;abril;
+Chapinero;15771;398;0;16221;97,23%;abril;
+Ciudad Bolivar;21222;2973;1516;25430;83,45%;abril;
+Engativa;5214;7985;697;14436;36,12%;abril;
+Fontibon;2354;5192;618;7019;33,54%;abril;
+Kennedy;15674;424;0;16904;92,72%;abril;
+La Candelaria;15349;400;492;16573;92,61%;abril;
+Los Martires;516;24;0;346;149,13%;abril;
+Puente Aranda;4832;8101;997;13573;35,60%;abril;
+Rafael Uribe;36720;3361;492;40319;91,07%;abril;
+San Cristobal;17339;1345;0;18400;94,23%;abril;
+Santa Fe;29730;5489;0;36266;81,98%;abril;
+Suba;6080;8518;878;14245;42,68%;abril;
+Sumapaz;5525;8185;955;14859;37,18%;abril;
+Teusaquillo;40;506;0;120;33,33%;abril;
+Tunjuelito;15678;1227;538;17358;90,32%;abril;
+Usaquen;21575;3446;921;25805;83,61%;abril;
+Usme;5722;236;96;5695;100,47%;abril;
+Antonio Narino;21075;1389;620;22772;92,55%;mayo;
+Barrios Unidos;16005;2373;452;19426;82,39%;mayo;
+Bosa;375;0;0;253;148,22%;mayo;
+Chapinero;25151;1857;256;26744;94,04%;mayo;
+Ciudad Bolivar;28669;6736;985;35965;79,71%;mayo;
+Engativa;991;2107;274;2247;44,10%;mayo;
+Fontibon;16745;1577;0;18363;91,19%;mayo;
+Kennedy;3152;5683;916;9156;34,43%;mayo;
+La Candelaria;25470;2533;455;27423;92,88%;mayo;
+Los Martires;13104;4412;0;18276;71,70%;mayo;
+Puente Aranda;21669;3021;1136;25785;84,04%;mayo;
+Rafael Uribe;1588;5769;0;7043;22,55%;mayo;
+San Cristobal;15574;1895;0;17444;89,28%;mayo;
+Santa Fe;5098;8045;367;13535;37,67%;mayo;
+Suba;2792;5835;540;8489;32,89%;mayo;
+Sumapaz;5759;7766;985;14231;40,47%;mayo;
+Teusaquillo;8308;33428;588;42091;19,74%;mayo;
+Tunjuelito;16678;1312;0;18288;91,20%;mayo;
+Usaquen;5723;8558;1084;14822;38,61%;mayo;
+Usme;21520;2899;1058;26080;82,52%;mayo;
+Antonio Narino;6066;7731;529;14541;41,72%;junio;
+Barrios Unidos;7423;34121;1388;42261;17,56%;junio;
+Bosa;12961;4203;331;17663;73,38%;junio;
+Chapinero;13454;4190;680;18040;74,58%;junio;
+Ciudad Bolivar;5711;8140;948;14301;39,93%;junio;
+Engativa;16100;2160;671;18926;85,07%;junio;
+Fontibon;677;1869;510;2275;29,76%;junio;
+Kennedy;1359;5748;305;7296;18,63%;junio;
+La Candelaria;16781;1609;750;19276;87,06%;junio;
+Los Martires;5593;215;284;5789;96,61%;junio;
+Puente Aranda;12911;4469;566;17850;72,33%;junio;
+Rafael Uribe;17467;1777;377;18854;92,64%;junio;
+San Cristobal;1919;5421;339;7098;27,04%;junio;
+Santa Fe;4771;8404;163;13335;35,78%;junio;
+Suba;16968;953;372;18533;91,56%;junio;
+Sumapaz;36933;2785;791;40552;91,08%;junio;
+Teusaquillo;2211;4771;0;7572;29,20%;junio;
+Tunjuelito;28470;5882;1184;35822;79,48%;junio;
+Usaquen;15939;1970;0;17566;90,74%;junio;
+Usme;17048;1562;0;18267;93,33%;junio;
