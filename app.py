@@ -8,6 +8,7 @@ from lgbm_model import load_data, run_light, predict_light
 from xgboost_model import run_xgboost, predict_xgboost
 from clustering import run_clustering, predict_cluster
 import lightgbm as lgb
+from dash import run_dashboard
 
 app = Flask(__name__)
 
@@ -188,6 +189,15 @@ def xgboost_explanation():
 @app.route("/clustering_explanation")
 def clustering_explanation():
     return render_template("clustering_explanation.html")
+
+
+# =========================
+# DASHBOARD
+# ========================= 
+@app.route("/dash")
+def dashboard():
+    datos = run_dashboard()
+    return render_template("dash.html", datos=datos)
 
 if __name__ == "__main__":
     app.run(debug=True)
