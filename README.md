@@ -17,6 +17,14 @@ Monthly public lighting records of Bogotá (2023), including:
 - Locality distribution
 - Infrastructure statistics
 
+  
+models used
+-XGBoost
+-Logistic Regression
+-Random Forest
+-LightGBM
+-K-Means Clustering
+
 by:
 Michelle Dallane Pedraza Gonzalez,
 Deivid Andres Real Franco,
